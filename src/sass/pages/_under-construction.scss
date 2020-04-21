@@ -1,7 +1,8 @@
 //- Under Construction specific styles
 body {
-  background-color: $main-color;
+  background: $main-color url($image-url + 'cat2.jpg');  
 }
+
 .main {
   display: flex;
   flex-direction: column;

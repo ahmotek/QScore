@@ -70,7 +70,12 @@ module.exports = {
             // After all CSS loaders we use plugin to do his work.
             // It gets all transformed CSS and extracts it into separate
             // single bundled file
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+              publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development',
+            },
           },
           {
             // This loader resolves url() and @imports inside CSS
