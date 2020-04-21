@@ -471,7 +471,7 @@ article > * + * {
 
 @font-face {
   font-family: OpenSans;
-  src: url("../assets/fonts/OpenSans-Regular.ttf");
+  src: url(assets/fonts/629a55a7e793da068dc580d184cc0e31.ttf);
 }
 body {
   color: #41474b;
@@ -597,5 +597,3 @@ body {
   min-height: 100vh;
   background-color: whitesmoke;
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 {
-  "name": "hello-world",
+  "name": "QualityScore",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "Quality Score home assignment",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmotek/hello-world.git"
+    "url": "git+https://github.com/ahmotek/QualityScore.git"
   },
   "keywords": [],
   "author": "Laura Garcia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahmotek/hello-world/issues"
+    "url": "https://github.com/ahmotek/QualityScore/issues"
   },
-  "homepage": "https://github.com/ahmotek/hello-world#readme",
+  "homepage": "https://github.com/ahmotek/QualityScore#readme",
   "devDependencies": {
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
