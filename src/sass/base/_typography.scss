@@ -1,8 +1,10 @@
 //- Basic typography style
+html {
+  font: normal 87.5% / 1.4 $text-font-stack; //- 87.5% makes 'em' unit to be computed to 14px; (14px wanted / 16px default)
+}
 
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack; //- 62.5% makes 'em' unit computed as 10px; 125% makes 'em' units computed as 20px;
 }
 
 //- TBD Headings, Parragraphs

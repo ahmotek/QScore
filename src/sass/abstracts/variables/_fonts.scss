@@ -4,6 +4,12 @@
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
+$text-font-weight: (
+  regular: 400,
+  normal: 500,
+  bold: 700
+);
+
 //- Set heading font-size
 $heading-font-1: 2.25em;
 $heading-font-1--map : (

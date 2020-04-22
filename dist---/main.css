@@ -449,7 +449,7 @@ a:not([class]) {
   /* better underline resdering */
 }
 a:hover, a:active, a:focus {
-  color: #2d589a;
+  color: #41474b;
   text-decoration: underline;
 }
 
@@ -470,36 +470,12 @@ article > * + * {
 }
 
 @font-face {
-  font-family: "RalewayLight";
-  font-weight: 400;
-  src: url(../assets/fonts/466d154fedd98f85c9deb363ccf859a7.ttf);
+  font-family: OpenSans;
+  src: url(../assets/fonts/629a55a7e793da068dc580d184cc0e31.ttf);
 }
-@font-face {
-  font-family: "RalewayRegular";
-  font-weight: 500;
-  src: url(../assets/fonts/9942588a6c84f959132556d99e83ded6.ttf);
-}
-@font-face {
-  font-family: "RalewayBlack";
-  font-weight: 500;
-  src: url(../assets/fonts/46818ebd4f76c4e6fe9b030dbc74f5cf.ttf);
-}
-@font-face {
-  font-family: "QuicksandRegular";
-  font-weight: 500;
-  src: url(../assets/fonts/316c232187bac46e708fad0b5d83666f.ttf);
-}
-@font-face {
-  font-family: "QuicksandBold";
-  font-weight: 500;
-  src: url(../assets/fonts/3cd49fcca0fcaa042649d15bab54199e.ttf);
-}
-html {
-  font: normal 87.5%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
 body {
-  color: #2d589a;
+  color: #41474b;
+  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -588,14 +564,14 @@ h6 {
 }
 
 /**
- * Main container:
- * 1. Make the container full-width with 1160px maximum width
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
  * 2. Center it in the viewport
- * 3. Leave 30px padding on the laterals
+ * 3. Leave some space on the edges, especially valuable on small screens
  */
 .main {
   width: 100%;
-  max-width: 1160px;
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2em;
@@ -610,15 +586,7 @@ h6 {
 }
 
 body {
-  color: #2d589a;
-  background: #6b85e8;
-  /* Old browsers */
-  background: -moz-radial-gradient(center 33.33vh, ellipse cover, #76a6ef 0%, #76a6ef 33.33%, #5d5ce0 100%);
-  /* FF3.6-15 */
-  background: -webkit-radial-gradient(center 33.33vh, ellipse cover, #76a6ef 0%, #76a6ef 33.33%, #5d5ce0 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center 33.33vh, #76a6ef 0%, #76a6ef 33.33%, #5d5ce0 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #cc6666 url(../assets/images/e1d5874c81ec7d690e1de0cadb0d3b8b.jpg);
 }
 
 .main {
@@ -627,4 +595,5 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: whitesmoke url(../assets/images/e1d5874c81ec7d690e1de0cadb0d3b8b.jpg);
 }

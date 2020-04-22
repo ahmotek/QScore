@@ -1,10 +1,9 @@
-//- Generic layout definitions:
-
+//- Layout definitions:
 /**
- * Main content containers
- * 1. Make the container full-width with a maximum width
+ * Main container:
+ * 1. Make the container full-width with 1160px maximum width
  * 2. Center it in the viewport
- * 3. Leave some space on the edges, especially valuable on small screens
+ * 3. Leave 30px padding on the laterals
  */
  .main {
   width: 100%;
