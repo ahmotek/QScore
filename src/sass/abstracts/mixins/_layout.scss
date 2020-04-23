@@ -1,0 +1,21 @@
+@mixin page-layout($max-layout-width: $max-width, $layout-gutter: $page-gutter) {
+  /**
+  * 1. Make container full-width with 1360px maximum width + padding, as per design
+  * 2. Center it in the viewport using margin: auto;
+  * 3. Leave 40px padding on the laterals for safety area, 20px on mobile
+  */
+  width: 100%;
+  max-width: $max-layout-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to('small') {
+    padding-left: $layout-gutter / 2; 
+    padding-right: $layout-gutter / 2;
+  }
+
+  @include respond-to('medium-large') {
+    padding-left: $layout-gutter;
+    padding-right: $layout-gutter;
+  }
+}

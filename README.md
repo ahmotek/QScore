@@ -44,25 +44,45 @@ TBD
 
 ## Remarks:
 
-### Provided & Missing Assets
+### Provided & Created Assets
 1. 'energy-renew.jpg' was provided with a background color that does not match the PSB background file;
-Solution: To serve a PNG file with transparency otherwise the use of a radial-gradient wont visually work.
+Solution: To serve a PNG file with transparency otherwise the use of a radial-gradient won't visually work.
+
+2. Missing icons:
+2.1. Shipping
+2.2. Buy now
+2.3. Tick icon of '100 Pure' section list
+2.4. Chevron for slide
+
+Note #1: some of the missing icons may be acquired with font awesome (eg: chevron) but since there are already svg icons on the project, it is preferable to avoid loading another font.
+
+Note #2: 
+
+3. All SVG icons should be organized in a SVG sprite - it is light, easier to control via CSS and by binding them all in one file only,  will reduce http requests;
 
 
 ### Expected Behaviour:
 1. Responsive;
 2. Maintainable and Reusable components;
-3. Pixel perfect;
+3. Performance;
+4. Pixel perfect;
 
 ### Issues
 
 ### Not delivered
 
 ### UI Defects
-1. On desktop view, the "Today's Discount" shows a percentage of an unknown value;
+1. Heading Mobile content is different than Heading Desktop - left Heading Desktop and adapted to fit;
+2. 'Online-Only' font-family is different between desktop and mobile - applied mobile version font-family
 
 
 ### Notes:
+1. Should use @import from google fonts and refactor CSS font-family value but google didn't API respond. Will check it later.
+````
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
+</style>
+```
 Time spent:
 21 April - start 19pm to 21pm - setup project and define basic variables to meet requirements;
-22 April - start 7am to - html markup;
+22 April - start 7am to 2am - con intervalos (+ 3 estudiando daily discound): html markup & styling - 75% done for the CSS work;

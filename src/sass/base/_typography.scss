@@ -1,6 +1,6 @@
 //- Basic typography style
 html {
-  font: normal 87.5% / 1.4 $text-font-stack; //- 87.5% makes 'em' unit to be computed to 14px; (14px wanted / 16px default)
+  font: normal 62.5% / 1.4 $text-font-stack; //- 62.5% makes 'em' unit to be computed to 10px for easier control of root units; (10px wanted / 16px default)
 }
 
 body {
@@ -9,21 +9,75 @@ body {
 
 //- TBD Headings, Parragraphs
 h1 {
+  font-family: $heading-font-stack;
+  // font-family: $raleway;
+  font-weight: map-get($text-font-weight, black);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: $heading-1-color;
+  white-space: nowrap;
+
   @include respond-to('small') {
-    font-size: map-get($heading-font-1--map, small);
+    font-size: 11.5vw;
+    line-height: 1em;
   }
 
   @include respond-to('medium') {
-    font-size: map-get($heading-font-1--map, medium);
+    // make font and line-height proportional to viewport width to auto-adapt on medium screen sizes
+    font-size: 5.9vw;
+    line-height: 5.25vw;
   }
 
   @include respond-to('large') {
     font-size: map-get($heading-font-1--map, large);
+    line-height: 7.5rem;
+  }
+
+  small {
+    font-family: $heading-font-small-stack;
+    font-weight: map-get($text-font-weight, light);
+    text-transform: initial;
+    letter-spacing: -0.025em;
+    color: $text-color;
+
+    @include respond-to('small') {
+      font-size: map-get($heading-font-1-small--map, small);
+    }
+
+    @include respond-to('medium-large') {
+      font-size: map-get($heading-font-1-small--map, large);
+    }
+
+    b {
+      @include respond-to('small') {
+        font-family: $ralewayBold;
+        font-weight: map-get($text-font-weight, bold);
+      }
+
+      @include respond-to('medium-large') {
+        font-family: $ralewayRegular;
+        font-weight: map-get($text-font-weight, regular);
+      }
+    }
   }
 }
 
 h2 {
-  font-size: $heading-font-2;
+  font-family: $text-font-stack;
+  // font-family: $quicksand;
+  font-weight: map-get($text-font-weight, regular);
+
+  @include respond-to('small') {
+    font-size: map-get($heading-font-2--map, small);
+  }
+
+  // @include respond-to('medium') {
+  //   font-size: map-get($heading-font-2--map, medium);
+  // }
+
+  @include respond-to('large') {
+    font-size: map-get($heading-font-2--map, large);
+  }
 }
 
 h3 {
@@ -43,15 +97,15 @@ h6 {
 }
 
 p {
-  @include respond-to(small) {
-    font-size: map-get($parragraph--map, small)
+  @include respond-to('small') {
+    font-size: map-get($parragraph--map, small);
   }
 
-  @include respond-to(medium) {
-    font-size: map-get($parragraph--map, medium)
+  @include respond-to('medium') {
+    font-size: map-get($parragraph--map, medium);
   }
 
-  @include respond-to(large) {
-    font-size: map-get($parragraph--map, large)
+  @include respond-to('large') {
+    font-size: map-get($parragraph--map, large);
   }
 }

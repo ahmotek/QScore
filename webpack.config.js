@@ -71,7 +71,7 @@ module.exports = {
             // It gets all transformed CSS and extracts it into separate
             // single bundled file
             loader: MiniCssExtractPlugin.loader,
-            options: {
+            options: { 
               esModule: true,
               publicPath: '../',
               hmr: process.env.NODE_ENV === 'development',
@@ -94,17 +94,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.css$/i,
-      //   use: ['style-loader', 'css-loader'],
-      // },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 8192,
-      //   },
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [

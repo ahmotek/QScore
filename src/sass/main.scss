@@ -15,20 +15,20 @@
         'base/fonts',
         'base/typography',  
         'base/helpers',
-        'base/layout'; 
+        'base/generic-layout'; 
 
 //- Layout areas
 @import 'layout/header',
         'layout/footer',
-        'layout/sidebar',
-        'layout/navigation',
-        'layout/forms';
+        'layout/forms',
+        'layout/main-container';
 
 //- Components
 @import 'components/buttons',
         'components/form-elements',
+        'components/list',
         'components/icons';
 
 //- Specific Pages
-@import 'pages/landing-GundryMD'
+@import 'pages/landing-GundryMD'; 
 

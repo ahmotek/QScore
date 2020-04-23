@@ -1,4 +1,12 @@
 //- Global variables
+//- Application maximum width
+/// @type Length
+$max-width: 1360px !default;
+$min-width: 320px !default;
+
+//- Main Container & Sections
+$max-main-container-width: 1100px !default;
+$main-section-width: 40rem !default;
 
 //- Assets URL
 /// @type String
@@ -6,5 +14,18 @@ $base-url: '../assets/' !default;
 $image-url: '../assets/images/' !default;
 $font-url: '../assets/fonts/' !default;
 
-//- Flow Sapce - https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
-$flow-space: 1em;
+//- Layout Variables
+/// @type Length
+$page-gutter: 4rem;
+
+//- Border-Radius
+$section-radius: 3rem;
+$button-radius: .5rem;
+$label-radius: 2rem;
+
+//- Z-Indices
+$z-index--map: (
+  negative: -1,
+  default: 0
+);
+

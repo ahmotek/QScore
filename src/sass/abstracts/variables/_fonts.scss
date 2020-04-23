@@ -1,23 +1,53 @@
 //- Fonts variables
+// $quicksand: 'Quicksand', sans-serif;
+// $raleway: 'Raleway', sans-serif;
+// Headings and variations
+$ralewayLight: 'RalewayLight', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 300
+$ralewayRegular: 'RalewayRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
+$ralewayBold: 'RalewayBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
+$ralewayBlack: 'RalewayBlack', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 900
+
+// // Regular Fonts
+$quicksandRegular: 'QuicksandRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
+$quicksandMedium: 'QuicksandMedium', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 500
+$quicksandBold: 'QuicksandBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
 
 //- Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$heading-font-stack: $ralewayBlack;
+$heading-font-small-stack: $ralewayLight;
+$text-font-stack: $quicksandRegular;
+$button-font-stack: $quicksandMedium;
+
+// $heading-font-stack: $raleway;
+// $text-font-stack: $quicksand;
 
 $text-font-weight: (
+  light: 300,
   regular: 400,
-  normal: 500,
-  bold: 700
+  medium: 500,
+  bold: 700,
+  black: 900
 );
 
 //- Set heading font-size
-$heading-font-1: 2.25em;
 $heading-font-1--map : (
-  small: .8em,
-  medium: 2em,
-  large: 2.25em
+  small: 5.3em, // 53px / 10px
+  // medium: 2em, // TBD if needed
+  large: 8.5em // 85px / 10px
 ); 
-$heading-font-2: 2em;
+$heading-font-1-small--map : (
+  small: 45.283%, //24px / 53px
+  // medium: 42.5%, // TBD if needed
+  large: 40% // 34px (required font-size) / 85px (parent font-size);
+);
+
+$heading-font-2--map : (
+  small: 1.4em, // 53px / 10px
+  // medium: 2em, // TBD if needed
+  large: 1.7em // 85px / 10px
+); 
+
 $heading-font-3: 1.75em;
 $heading-font-4: 1.5em;
 $heading-font-5: 1.25em;

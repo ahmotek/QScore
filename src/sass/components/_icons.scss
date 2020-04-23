@@ -1,0 +1,25 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: $text-color; /* default color */
+  color: $text-color; /* default color when currentColor is used */
+  font-size: 1.4em; /* default-size */
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: content-box;
+  margin: auto;
+  overflow: hidden;
+  pointer-events: none;
+
+  &--header-list {
+    font-size: 2rem;
+    margin-left: -3rem;
+    margin-top: -.3rem; // for optical alignment
+    margin-right: 1rem;
+  }
+
+  &--light {
+    color: $steel-grey;
+  }
+}

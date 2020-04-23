@@ -94,7 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"Hello World from your main file!\");\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_components_navigation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/components/navigation.js */ \"./src/js/components/navigation.js\");\n/* harmony import */ var _js_components_navigation_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_components_navigation_js__WEBPACK_IMPORTED_MODULE_1__);\n// import SCSS main partial\n // import JS partials\n\n\nconsole.log(\"Hello World from your main file!\");\n\n//# sourceURL=webpack:///./src/js/app.js?");
+
+/***/ }),
+
+/***/ "./src/js/components/navigation.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/navigation.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("console.log('navigation check!'); // function check() {\n//   document.getElementById(\"red\").checked = true;\n// }\n// function uncheck() {\n//   document.getElementById(\"red\").checked = false;\n// }\n\n//# sourceURL=webpack:///./src/js/components/navigation.js?");
 
 /***/ }),
 

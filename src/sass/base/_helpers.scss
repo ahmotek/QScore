@@ -33,3 +33,15 @@
   position: absolute;
   width: 1px;
 }
+
+.hide-for-s {
+  @include respond-to('small') {
+    display: none !important;
+  }
+}
+
+.hide-for-ml {
+  @include respond-to('medium-large') {
+    display: none !important;
+  }
+}

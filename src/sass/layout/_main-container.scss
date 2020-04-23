@@ -1,0 +1,192 @@
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: calc(#{$max-main-container-width} + #{2 * $page-gutter});
+
+  @include respond-to('small') {
+    flex-direction: column;
+  }
+
+  @include respond-to('medium-large') {
+    margin-bottom: 4rem;
+  }
+}
+
+.section {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  @include respond-to('medium-large') {
+    background-color: $white;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+
+    @include respond-to('medium-large') {
+      height: 6.6rem;
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      color: $white;
+    }
+
+    .section--primary & {
+      @include respond-to('small') {
+        padding-bottom: 1rem;
+        font-family: $quicksandBold;
+        font-weight: map-get($text-font-weight, bold);
+        text-transform: uppercase;
+        color: $section-header-color;
+      }
+
+      @include respond-to('medium-large') {
+        background-color: $section-header-bg;
+      }
+    }
+
+    .section--secondary &,
+    .section--tertiary & {
+      @include respond-to('medium-large') {
+        background-color: mix($white, $section-header-bg, 15%);
+      }
+    }
+
+    .section--secondary & {
+      font-family: $quicksandBold;
+      font-weight: map-get($text-font-weight, bold);
+
+      @include respond-to('small') {
+        color: $light-sky-blue;
+      }
+    }
+  }
+
+  &__body,
+  &__radio-group {
+    width: 100%;
+    text-align: center;
+
+    @include respond-to('medium') {
+      padding: 0 1rem;
+    }
+
+    @include respond-to('large') {
+      padding: 0 3rem;
+    }
+  }
+
+  &__body {
+    @include respond-to('small') {
+      background-color: $white;
+    }
+  }
+
+  &__labels-group {
+    display: flex;
+    justify-content: space-between;
+
+    & > * {
+      padding: 1rem .5rem;
+      white-space: nowrap;
+      background-color: $label-bg--unchecked;
+      border-radius: $label-radius;
+
+      @include respond-to('medium-large') {
+        width: 30%;
+      }
+
+      &.is-checked {
+        background-color: $label-bg--checked;
+      }
+    }
+
+    @include respond-to(medium-large) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__radio-group {
+    
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #f0f0f0;
+    border-radius: $section-radius;
+  }
+
+  &__cell {
+    padding: 2rem 1rem;
+    
+    &:nth-child(1) {
+      border-right: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+      
+    }
+    
+    &:nth-child(2) {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    &:nth-child(3) {
+      border-right: 1px solid #f0f0f0;
+    }
+
+    &:nth-child(4) {
+      
+    }
+  }
+
+  &--primary {
+    border-radius: $section-radius;
+    flex-grow: 2;
+
+    @include respond-to('small') {
+      order: 1;
+    }
+
+    @include respond-to('medium-large') {
+      order: 2;
+      width: 36.4%;
+      padding-bottom: 1.6rem;
+    }
+  }
+
+  &--secondary,
+  &--tertiary {
+    flex-grow: 1;
+    margin-top: 4rem;
+
+    @include respond-to('medium-large') {
+      width: 31.8%;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &--secondary {
+    
+
+    @include respond-to('small') {
+      order: 2;
+      width: 100vw;
+      margin-left: -$page-gutter / 2;
+      background-color: $section-ele-bg;
+    }
+
+    @include respond-to('medium-large') {
+      order: 1;
+      border-radius: $section-radius 0 0 $section-radius;
+    }
+  }
+
+  &--tertiary {
+    order: 3;
+    border-radius: 0 $section-radius $section-radius 0;
+  }
+}

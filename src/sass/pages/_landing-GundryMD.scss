@@ -1,16 +1,52 @@
 //- Under Construction specific styles
 body {
   color: $text-color;
-  background: mix($gradient-bg-start-color, $gradient-bg-stop-color, 55%); /* Old browsers */
-  background: -moz-radial-gradient(center 33.33vh, ellipse cover, $gradient-bg-start-color 0%, $gradient-bg-start-color 33.33%, $gradient-bg-stop-color 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center 33.33vh, ellipse cover, $gradient-bg-start-color 0%,$gradient-bg-start-color 33.33%, $gradient-bg-stop-color 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center 33.33vh, $gradient-bg-start-color 0%, $gradient-bg-start-color 33.33%, $gradient-bg-stop-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
-}
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  @include respond-to('small') {
+    background: mix($gradient-bg-start-color, $gradient-bg-stop-color, 55%); /* Old browsers */
+    background: -moz-radial-gradient(
+      center bottom,
+      ellipse cover,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 150%
+    ); /* FF3.6-15 */
+    background: -webkit-radial-gradient(
+      center bottom,
+      ellipse cover,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 150%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(
+      ellipse at center bottom,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 150%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+  @include respond-to('medium-large') {
+    background: mix($gradient-bg-start-color, $gradient-bg-stop-color, 55%); /* Old browsers */
+    background: -moz-radial-gradient(
+      center 33.33vh,
+      ellipse cover,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 100%
+    ); /* FF3.6-15 */
+    background: -webkit-radial-gradient(
+      center 33.33vh,
+      ellipse cover,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(
+      ellipse at center 33.33vh,
+      $gradient-bg-start-color 0%,
+      $gradient-bg-start-color 33.33%,
+      $gradient-bg-stop-color 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
 }

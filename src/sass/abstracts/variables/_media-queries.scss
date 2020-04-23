@@ -1,14 +1,11 @@
-//- Max width and Breakpoints map range variables
-
-//- Application maximum width
-/// @type Length
-$max-width: 1160px !default;
+//- Breakpoints map range variables
 
 //- Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': '(max-width: 767px)',
-  'medium': '(min-width: 768px) and (max-width: 1023px)',
-  'large': '(min-width: 1024px)'
+  'small': '(max-width: 768px)',
+  'medium': '(min-width: 769px) and (max-width: #{$max-width})',
+  'large': '(min-width: #{$max-width})',
+  'medium-large': '(min-width: 768px)'
 ) !default;

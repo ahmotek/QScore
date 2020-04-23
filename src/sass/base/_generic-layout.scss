@@ -1,0 +1,6 @@
+//- Layout definitions:
+
+//- Apply page-layout() to all direct children of body
+body > * {
+  @include page-layout();
+}
