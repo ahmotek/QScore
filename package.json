@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
     "build-production": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --watch"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "autoprefixer": "^9.6.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",

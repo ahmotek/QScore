@@ -34,14 +34,18 @@
   width: 1px;
 }
 
-.hide-for-s {
+.hide-for-sml {
   @include respond-to('small') {
     display: none !important;
   }
 }
 
-.hide-for-ml {
+.hide-for-med-lg {
   @include respond-to('medium-large') {
     display: none !important;
   }
+}
+
+.is-checked {
+  // defined with it's element
 }

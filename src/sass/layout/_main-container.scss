@@ -4,84 +4,167 @@
   width: 100%;
   max-width: calc(#{$max-main-container-width} + #{2 * $page-gutter});
 
-  @include respond-to('small') {
+  @include respond-to("small") {
     flex-direction: column;
   }
 
-  @include respond-to('medium-large') {
+  @include respond-to("medium-large") {
     margin-bottom: 4rem;
   }
 }
 
 .section {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  
-  @include respond-to('medium-large') {
-    background-color: $white;
+
+  @include respond-to("medium-large") {
+    // background-color: $white;
   }
 
+  //- Section Elements
   &__title {
     width: 100%;
     text-align: center;
 
-    @include respond-to('medium-large') {
+    @include respond-to("medium-large") {
       height: 6.6rem;
-      margin-bottom: 2rem;
       padding-top: 2rem;
       color: $white;
     }
 
     .section--primary & {
-      @include respond-to('small') {
+      @include respond-to("small") {
         padding-bottom: 1rem;
-        font-family: $quicksandBold;
         font-weight: map-get($text-font-weight, bold);
         text-transform: uppercase;
         color: $section-header-color;
       }
 
-      @include respond-to('medium-large') {
+      @include respond-to("medium-large") {
         background-color: $section-header-bg;
+        border-radius: $section-radius $section-radius 0 0;
       }
     }
 
     .section--secondary &,
     .section--tertiary & {
-      @include respond-to('medium-large') {
+      @include respond-to("medium-large") {
         background-color: mix($white, $section-header-bg, 15%);
       }
     }
 
     .section--secondary & {
-      font-family: $quicksandBold;
+      // font-family: $quicksandBold;
       font-weight: map-get($text-font-weight, bold);
 
-      @include respond-to('small') {
+      @include respond-to("small") {
         color: $light-sky-blue;
+      }
+
+      @include respond-to("medium-large") {
+        border-radius: $section-radius 0 0 0;
+      }
+    }
+
+    .section--tertiary & {
+      @include respond-to("medium-large") {
+        border-radius: 0 $section-radius 0 0;
       }
     }
   }
 
   &__body,
-  &__radio-group {
+  &__footer {
     width: 100%;
     text-align: center;
 
-    @include respond-to('medium') {
-      padding: 0 1rem;
+    .section--primary & {
+      @include respond-to("small-medium") {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      @include respond-to("large") {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
     }
 
-    @include respond-to('large') {
-      padding: 0 3rem;
+    .section--secondary &,
+    .section--tertiary & {
+      @include respond-to("medium") {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      @include respond-to("large") {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
     }
   }
 
   &__body {
-    @include respond-to('small') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    img {
+      margin: 0 auto;
+    }
+
+    .section--primary & {
       background-color: $white;
+
+      @include respond-to("small") {
+        border-radius: $section-radius;
+      }
+    }
+
+    .section--secondary &,
+    .section--tertiary & {
+      @include respond-to("medium-large") {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: mix($white, $dirty-white, 65%);
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 1rem;
+
+    @include respond-to("medium-large") {
+      padding-bottom: 2rem;
+    }
+
+    .section--primary & {
+      @include respond-to("medium-large") {
+        background-color: $white;
+        border-radius: 0 0 $section-radius $section-radius;
+      }
+    }
+
+    .section--secondary &,
+    .section--tertiary & {
+      @include respond-to("medium-large") {
+        font-weight: map-get($text-font-weight, bold);
+        background-color: $white;
+      }
+    }
+
+    .section--secondary & {
+      @include respond-to("medium-large") {
+        text-transform: uppercase;
+        border-radius: 0 0 0 $section-radius;
+      }
+    }
+
+    .section--tertiary & {
+      border-radius: 0 0 $section-radius 0;
     }
   }
 
@@ -90,71 +173,126 @@
     justify-content: space-between;
 
     & > * {
-      padding: 1rem .5rem;
+      padding: 1rem 0.5rem;
       white-space: nowrap;
       background-color: $label-bg--unchecked;
       border-radius: $label-radius;
 
-      @include respond-to('medium-large') {
+      @include respond-to("medium-large") {
         width: 30%;
       }
 
       &.is-checked {
         background-color: $label-bg--checked;
+        color: $white;
       }
     }
 
-    @include respond-to(medium-large) {
-      margin-bottom: 1.5rem;
+    @include respond-to("medium-large") {
+      margin-bottom: 2rem;
     }
   }
 
   &__radio-group {
-    
+    margin-bottom: 1.5rem;
   }
 
   &__grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid #f0f0f0;
+    margin-bottom: 2rem;
+    border: 1px solid $border-color;
     border-radius: $section-radius;
+
+    @include respond-to("medium-large") {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__cell {
-    padding: 2rem 1rem;
-    
-    &:nth-child(1) {
-      border-right: 1px solid #f0f0f0;
-      border-bottom: 1px solid #f0f0f0;
-      
-    }
-    
-    &:nth-child(2) {
-      border-bottom: 1px solid #f0f0f0;
-    }
-    
-    &:nth-child(3) {
-      border-right: 1px solid #f0f0f0;
+    @include respond-to("small") {
+      padding: 1em;
     }
 
-    &:nth-child(4) {
-      
+    @include respond-to("medium-large") {
+      padding: 2rem 1rem;
+    }
+
+    &:nth-child(1) {
+      @include respond-to("medium-large") {
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    &:nth-child(2) {
+      @include respond-to("medium-large") {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    &:nth-child(3) {
+      @include respond-to("medium-large") {
+        border-right: 1px solid $border-color;
+      }
     }
   }
 
-  &--primary {
-    border-radius: $section-radius;
-    flex-grow: 2;
+  &__cell-title,
+  &__cell-value {
+    @include respond-to('small') {
+      display: inline-block;
+    }
+  }
+
+  &__cell-title {
+    font-size: 1.1rem;
+    font-weight: map-get($text-font-weight, bold);
+    color: $cell-title;
 
     @include respond-to('small') {
+      margin-right: .6rem;
+    }
+
+    .section__cell--shipping & {
+      color: $cell-title-darker;
+    }
+  }
+
+  &__cell-value {
+    font-size: 1.7rem;
+    font-weight: map-get($text-font-weight, regular);
+
+    &--pos {
+      color: $positive-color;
+    }
+
+    &--neg {
+      color: $negative-color;
+      text-decoration: line-through;
+    }
+  }
+
+  &__total {
+  }
+
+  &__total-footer {
+    font-size: 1.1rem;
+    font-weight: map-get($text-font-weight, bold);
+    text-transform: uppercase;
+  }
+
+  //- Section Modifiers
+  &--primary {
+    flex-grow: 2;
+
+    @include respond-to("small") {
       order: 1;
     }
 
-    @include respond-to('medium-large') {
+    @include respond-to("medium-large") {
       order: 2;
       width: 36.4%;
-      padding-bottom: 1.6rem;
     }
   }
 
@@ -163,30 +301,92 @@
     flex-grow: 1;
     margin-top: 4rem;
 
-    @include respond-to('medium-large') {
+    @include respond-to("medium-large") {
+      position: relative;
       width: 31.8%;
       margin-bottom: 5rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 3rem;
+        height: 100%;
+      }
     }
   }
 
   &--secondary {
-    
-
-    @include respond-to('small') {
+    @include respond-to("small") {
       order: 2;
       width: 100vw;
       margin-left: -$page-gutter / 2;
+      padding: $page-gutter / 2;
       background-color: $section-ele-bg;
     }
 
-    @include respond-to('medium-large') {
+    @include respond-to("medium-large") {
       order: 1;
       border-radius: $section-radius 0 0 $section-radius;
+
+      &::before {
+        right: 0;
+        background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.1) -100%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          right,
+          rgba(0, 0, 0, 0.1) -100%,
+          rgba(0, 0, 0, 0) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 0.1) -100%,
+          rgba(0, 0, 0, 0) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      }
     }
   }
 
   &--tertiary {
     order: 3;
     border-radius: 0 $section-radius $section-radius 0;
+
+    &::before {
+      left: 0;
+      background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1) -100%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(
+        left,
+        rgba(0, 0, 0, 0.1) -100%,
+        rgba(0, 0, 0, 0) 100%
+      ); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.1) -100%,
+        rgba(0, 0, 0, 0) 100%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+  }
+}
+
+.final-price {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-bottom: 1px solid $border-color;
+
+  &__currency {
+    font-size: 2.2rem;
+    color: $text-color-lighter;
+  }
+
+  &__integer {
+    font-size: 4.7rem;
+  }
+
+  &__decimals {
+    font-size: 3rem;
+    font-weight: map-get($text-font-weight, medium);
   }
 }

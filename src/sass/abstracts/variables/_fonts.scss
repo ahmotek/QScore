@@ -1,26 +1,26 @@
 //- Fonts variables
-// $quicksand: 'Quicksand', sans-serif;
-// $raleway: 'Raleway', sans-serif;
+$quicksand: 'Quicksand', 'Helvetica', 'Arial', sans-serif;
+$raleway: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 // Headings and variations
-$ralewayLight: 'RalewayLight', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 300
-$ralewayRegular: 'RalewayRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
-$ralewayBold: 'RalewayBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
-$ralewayBlack: 'RalewayBlack', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 900
+// $ralewayLight: 'RalewayLight', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 300
+// $ralewayRegular: 'RalewayRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
+// $ralewayBold: 'RalewayBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
+// $ralewayBlack: 'RalewayBlack', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 900
 
 // // Regular Fonts
-$quicksandRegular: 'QuicksandRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
-$quicksandMedium: 'QuicksandMedium', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 500
-$quicksandBold: 'QuicksandBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
+// $quicksandRegular: 'QuicksandRegular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 400
+// $quicksandMedium: 'QuicksandMedium', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 500
+// $quicksandBold: 'QuicksandBold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default; // 700
 
 //- Regular font family
 /// @type List
-$heading-font-stack: $ralewayBlack;
-$heading-font-small-stack: $ralewayLight;
-$text-font-stack: $quicksandRegular;
-$button-font-stack: $quicksandMedium;
+// $heading-font-stack: $ralewayBlack;
+// $heading-font-small-stack: $ralewayLight;
+// $text-font-stack: $quicksandRegular;
+// $button-font-stack: $quicksandMedium;
 
-// $heading-font-stack: $raleway;
-// $text-font-stack: $quicksand;
+$heading-font-stack: $raleway;
+$text-font-stack: $quicksand;
 
 $text-font-weight: (
   light: 300,
@@ -54,7 +54,7 @@ $heading-font-5: 1.25em;
 $heading-font-6: 1em;
 
 $parragraph--map: (
-  small: .6em,
-  medium: 1em,
-  large: 1.75em
+  small: 1.1em,
+  // medium: 1em,
+  large: 1.3em
 );

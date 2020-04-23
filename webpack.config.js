@@ -3,6 +3,10 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const devMode = process.env.NODE_ENV !== 'production';
+
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 /*
  * SplitChunksPlugin is enabled by default and replaced
  * deprecated CommonsChunkPlugin. It automatically identifies modules which
@@ -29,6 +33,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'development',
+  // mode: devMode ? 'development' : 'production',
 
   // Path to your entry point. From this file Webpack will begin his work
   entry: './src/js/app.js',
@@ -36,6 +41,12 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
+  },
+
+  watch: true,
+
+  watchOptions: {
+    ignored: /node_modules/
   },
 
   module: {
@@ -71,7 +82,7 @@ module.exports = {
             // It gets all transformed CSS and extracts it into separate
             // single bundled file
             loader: MiniCssExtractPlugin.loader,
-            options: { 
+            options: {
               esModule: true,
               publicPath: '../',
               hmr: process.env.NODE_ENV === 'development',
@@ -100,7 +111,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              outputPath: 'assets/images'
+              esModule: true,
+              outputPath: './assets/images'
             }
           }
         ]
@@ -111,7 +123,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              outputPath: 'assets/fonts'
+              outputPath: './assets/fonts'
             }
           }
         ]
@@ -120,6 +132,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     // new webpack.ProgressPlugin(), 
     // new HtmlWebpackPlugin(),
     new MiniCssExtractPlugin({

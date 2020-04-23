@@ -5,7 +5,8 @@
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
   'small': '(max-width: 768px)',
+  'small-medium': '(max-width: #{$max-width})',
   'medium': '(min-width: 769px) and (max-width: #{$max-width})',
   'large': '(min-width: #{$max-width})',
-  'medium-large': '(min-width: 768px)'
+  'medium-large': '(min-width: 769px)'
 ) !default;

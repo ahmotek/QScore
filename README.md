@@ -78,11 +78,13 @@ Note #2:
 
 ### Notes:
 1. Should use @import from google fonts and refactor CSS font-family value but google didn't API respond. Will check it later.
-````
+```
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
 </style>
 ```
-Time spent:
+2. Images are not being copied
+
+#### Time spent:
 21 April - start 19pm to 21pm - setup project and define basic variables to meet requirements;
 22 April - start 7am to 2am - con intervalos (+ 3 estudiando daily discound): html markup & styling - 75% done for the CSS work;

@@ -1,21 +1,21 @@
 .list {
+  text-align: left;
 
   .list__item {
     padding-left: 3rem;
   }
 
   &--header-section {
-    font-family: $quicksandBold;
+    // font-family: $quicksandBold;
     font-weight: map-get($text-font-weight, bold);
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
 
   &--detail {
-
-    span {
-      font-size: 1.7rem;
-      line-height: 3rem;
-    }
+    display: inline-block;
+    font-weight: map-get($text-font-weight, regular);
+    font-size: 1.7rem;
+    line-height: 3rem;
   }
 }

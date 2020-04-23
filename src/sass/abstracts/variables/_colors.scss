@@ -1,22 +1,32 @@
 //- Color variables
 /// @type Color
 $white: #fff !default;
-$dirty-white: #fefefe !default;
+$dirty-white: #f0f0f0 !default;
 $light-grey: #ebf1fa !default;
 $steel-blue: #2d589a !default;
-$cornflower-blue: mix($white, $steel-blue, 85%) !default;
+$cornflower-blue: mix($white, $steel-blue, 70%) !default;
 $steel-grey: mix($white, $steel-blue, 30%) !default;
 $light-sky-blue: #76a6ef !default;
 $slate-blue: #5d5ce0 !default;
+$grey: #98a0af;
+$dark-grey: #6b717b;
 $green-yellow: #d7f741 !default;
+$black: #000 !default;
+
+$red: #f77163 !default;
+$green: #4abe33 !default;
 
 $heading-1-color: $white;
-$heading-2-color: $dirty-white;
+$heading-2-color: $white;
 $section-header-bg: $steel-blue;
 $section-header-color: $green-yellow;
 $text-color: $steel-blue;
+$text-color-lighter: $cornflower-blue;
 $section-ele-bg: $light-grey;
 $section-ele-border: $light-grey;
+$cell-title: $grey;
+$cell-title-darker: $dark-grey;
+$section-detail-list-color: $steel-grey;
 
 $gradient-bg-start-color: $light-sky-blue;
 $gradient-bg-stop-color: $slate-blue;
@@ -24,5 +34,11 @@ $gradient-bg-stop-color: $slate-blue;
 $button-primary-color: $green-yellow;
 
 $label-bg--checked: $light-sky-blue;
-$label-bg--unchecked: #f0f0f0;
+$label-bg--unchecked: $dirty-white;
+
+$negative-color: $red;
+$positive-color: $green;
+
+$border-color: transparentize($black, .925);
+
 

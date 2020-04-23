@@ -12,14 +12,37 @@
   overflow: hidden;
   pointer-events: none;
 
-  &--header-list {
-    font-size: 2rem;
-    margin-left: -3rem;
+  .list & {
     margin-top: -.3rem; // for optical alignment
     margin-right: 1rem;
+    margin-left: -3rem;
   }
 
-  &--light {
-    color: $steel-grey;
+  &--header-list {
+    font-size: 2rem;
+  }
+
+  &--detail-list {
+    font-size: 1.3rem;
+    color: $text-color-lighter;
+  }
+
+  &--section-grid {
+    margin-top: -.2rem; // for optical alignment
+    margin-right: .6rem;
+  }
+
+  &--chevron-left,
+  &--chevron-right {
+    font-size: 1.5rem;
+    color: $white;
+  }
+
+  &--chevron-left {
+    transform: rotate(180deg);
+  }
+
+  &--chevron-right {
+    
   }
 }

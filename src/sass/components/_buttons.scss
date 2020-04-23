@@ -1,12 +1,18 @@
 .button {
-  width: calc(100% - 6rem);
+  width: 100%;
   padding: 2rem 1rem;
-  font-family: $quicksandMedium;
+  // font-family: $quicksandMedium;
   font-weight: map-get($text-font-weight, medium);
   font-size: 1.7rem;
   border-radius: $button-radius;
 
   &--primary {
     background-color: $button-primary-color;
+  }
+
+  &--icon {
+    display: inline-block;
+    width: auto;
+    padding: 1rem;
   }
 }
