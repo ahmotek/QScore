@@ -21,6 +21,7 @@
     "url": "https://github.com/ahmotek/QualityScore/issues"
   },
   "homepage": "https://github.com/ahmotek/QualityScore#readme",
+  
   "devDependencies": {
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",

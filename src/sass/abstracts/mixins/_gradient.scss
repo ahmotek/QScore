@@ -2,7 +2,7 @@
 // $type: linear || repeating-linear
 // $dir: to right || to left || deg
 
-// To finish later
+// TODO: finish later
 
 @mixin gradient($gradient-type, $start-color, $start-pos, $end-color, $end-pos, $orientation) {
   background: $start-color;

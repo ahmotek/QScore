@@ -85,7 +85,9 @@ Note #2:
 ```
 2. Images are not being copied... :(
 
-3. 
+3. When on desktop select 6 Jars option and the resize, 6 Jars should be selected.
+
+4. when resize, slider should be seen
 
 #### Time spent:
 21 April - start 19pm to 21pm - setup project and define basic variables to meet requirements;

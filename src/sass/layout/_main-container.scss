@@ -151,11 +151,14 @@
       padding-bottom: $vertical-space;
     }
 
-    .section--primary & {
+    .section--primary &,
+    .section--secondary & {
       @include respond-to("small") {
         max-width: var(--card-max-width);
       }
+    }
 
+    .section--primary & {
       @include respond-to("medium-large") {
         background-color: $white;
         border-radius: 0 0 $section-radius $section-radius;

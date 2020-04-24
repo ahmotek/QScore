@@ -1,69 +1,111 @@
-// SLIDER partial 
+console.log('## slider UI and functionality');
+
 const slideNav = document.getElementById('slideNavigation');
 
 let slideItem = document.querySelectorAll('.slide-item');
-var nextButton = document.querySelector('.js-next');
-var prevButton = document.querySelector('.js-prev');
+var buttonNext = document.querySelector('.js-next');
+var buttonPrev = document.querySelector('.js-prev');
 var threshold = 200;
 
 var slider = document.getElementById('slideContainer');
 
+//- getActiveElement var with an anonymous function assigned (Funtion Expression):
+//- 1. set active items to 0
+//- 2. loop through all slideItem.length
+//- 3. reach the item whith .is-active
+//- 4. set active items to i
+//- 5. slideItem index of active index
+//- 6. return activeElement and its index
 
 var getActiveElement = function () {
-  // slideItem = document.querySelectorAll('.slide-item');
-  
+  console.log('getActiveElement()');
+
   var active = 0;
+
+  // console.log(slideItem.length);
 
   for (var i = 0; i < slideItem.length; i++) {
     var item = slideItem[i];
+
+    // console.log(item);
 
     if (item.classList.contains('is-active')) {
       active = i;
     }
   }
+
   var activeElement = slideItem[active];
+
   return {
     element: activeElement,
     index: active
   };
 }
 
-var bulletClick = function (event) {
-  var bullets = document.querySelectorAll('.slide-navigation__item');
-  var clickedBullet = event.target;
-  var clickedIndex = Array.prototype.indexOf.call(bullets, clickedBullet);
-  var activeBullet = document.querySelector('.slide-navigation__item.is-active');
-  activeBullet.classList.remove('is-active');
-  clickedBullet.classList.add('is-active');
+//- paginationItemClick expression with anonymous function:
+//- 1. get all paginationItems
+//- 2. clickedItem: target element
+//- 3. clickedIndex: index of clicked item in paginationItems
+//- 4. select activeItem (before step 5)
+//- 5. activeItem remove active class
+//- 6. clickedItem add active class
+//- 7. call removeClassesByPrefix(); to remove existent slide- classes
+//- 8. call goToSlide() passing clickedIndex val
+
+var paginationItemClick = function (e) {
+  console.log('paginationItemClick()');
+
+  var paginationItems = document.querySelectorAll('.slide-navigation__item');
+  var clickedItem = e.target;
+  var clickedIndex = Array.prototype.indexOf.call(paginationItems, clickedItem);
+  var activeItem = document.querySelector('.slide-navigation__item.is-active');
+  
+  // console.log(paginationItems);
+  // console.log(clickedIndex);
+
+  activeItem.classList.remove('is-active');
+  clickedItem.classList.add('is-active');
   removeClassesByPrefix(slider, 'slide-');
   goToSlide(clickedIndex);
 }
 
-var addBullet = function () {
+var paginationItem = function () {
+  console.log('paginationItem()');
+
   var length = slideItem.length;
   var activeIndex = getActiveElement().index;
-  var bulletContainer = document.getElementById('slideNavigation');;
+  var paginationItemContainer = document.getElementById('slideNavigation');;
+  
   for (var i = 0; i < length; i++) { 
     var el = document.createElement('span');
+    
     el.classList.add('slide-navigation__item');
+
     if (i === activeIndex) {
       el.classList.add('is-active');
     }
-    var addedElement = bulletContainer.appendChild(el);
-    addedElement.addEventListener('click', bulletClick);
+
+    var addedPaginationItem = paginationItemContainer.appendChild(el);
+    
+    addedPaginationItem.addEventListener('click', paginationItemClick);
   }
 }
 
-addBullet();
+paginationItem();
 
-var getFollowingElement = function (active, prev) {
-  // slideItem = document.querySelectorAll('.slide-item');
+var getFutureItem = function (active, prev) {
+  console.log('getFutureItem()');
+
   var index = active + (prev ? -1 : 1);
+
   if (active == 0 && prev) {
     index = slideItem.length - 1;
+  
   } else if (active == slideItem.length - 1 && !prev) {
     index = 0;
+  
   }
+  
   return {
     element: slideItem[index],
     index: index
@@ -71,61 +113,62 @@ var getFollowingElement = function (active, prev) {
 }
 
 var goToSlide = function (index) {
-  // slideItem = document.querySelectorAll('.slide-item');
+  console.log('goToSlide()');
+
   var active = getActiveElement();
   var activeElement = active.element;
-  var activeIndex = active.index;
+  // var activeIndex = active.index;
+  
   activeElement.classList.remove('is-active');
-  var following = slideItem[index];
-  following.classList.add('is-active');
+  
+  var futureItem = slideItem[index];
+
+  futureItem.classList.add('is-active');
   document.querySelector('.slide-navigation__item.is-active').classList.remove('is-active'); //- add index Nº class to parent
-  console.log(index);
+  
+  // console.log(index);
   slider.classList.add('slide-' + Number(index + 1));
-  var bullet = document.querySelectorAll('.slide-navigation__item');
-  bullet[index].classList.add('is-active');
+
+  // Storage paginationItem and assign active class
+  var paginationItem = document.querySelectorAll('.slide-navigation__item');
+
+  paginationItem[index].classList.add('is-active');
 
   if(index === 0) {
-    prevButton.classList.add('is-disabled');
-    prevButton.disabled = true;
+    buttonPrev.classList.add('is-disabled');
   } else {
-    prevButton.classList.remove('is-disabled');
+    buttonPrev.classList.remove('is-disabled');
   }
 
   if(index === 2) {
-    nextButton.classList.add('is-disabled');
-    nextButton.disabled = true;
+    buttonNext.classList.add('is-disabled');
   } else {
-    nextButton.classList.remove('is-disabled');
-  }
-
-  if(activeIndex != 0) {
-    
-  }
-
-  if(activeIndex != 2) {
-    
+    buttonNext.classList.remove('is-disabled');
   }
 }
 
-var move = function (prev) {
+var arrowButton = function (prev) {
+  console.log('arrowButton()');
+
   var active = getActiveElement();
   var activeIndex = active.index;
-  var following = getFollowingElement(activeIndex, prev);
+  var futureItem = getFutureItem(activeIndex, prev);
 
   removeClassesByPrefix(slider, 'slide-');
-  goToSlide(following.index);
+  goToSlide(futureItem.index);
 };
 
-nextButton.addEventListener('click', function () {
-  move();
+buttonNext.addEventListener('click', function () {
+  arrowButton();
 });
 
-prevButton.addEventListener('click', function () {
-  move(true);
+buttonPrev.addEventListener('click', function () {
+  arrowButton(true);
 });
-
 
 function removeClassesByPrefix(el, prefix) {
+  console.log('removeClassesByPrefix()');
+
   for (var i = el.classList.length - 1; i >= 0; i--) {
     if (el.classList[i].startsWith(prefix)) {
       el.classList.remove(el.classList[i]);
@@ -133,11 +176,13 @@ function removeClassesByPrefix(el, prefix) {
   }
 }
 
-function listenOnLoaded() {
-  var active = getActiveElement();
-  var activeIndex = active.index;
-  console.log(activeIndex);
-  slider.classList.add('slide-' + Number(activeIndex + 1));
-}
+// TO USE IF HAVE TIME TO CONNECT THE TAB BUTTONS TO THE SLIDE BUTTONS
 
-document.addEventListener('DOMContentLoaded', listenOnLoaded);
+// function listenOnLoaded() {
+//   var active = getActiveElement();
+//   var activeIndex = active.index;
+//   console.log(activeIndex);
+//   slider.classList.add('slide-' + Number(activeIndex + 1));
+// }
+
+// document.addEventListener('DOMContentLoaded', listenOnLoaded);

@@ -1,11 +1,14 @@
 // import SCSS main partial
 import '../sass/main.scss';
 
-// import JS partials
+// import JS partials - Order matters!!
+import '../js/components/cloneProducts.js';
+import './components/resizing.js';
 import '../js/components/tab.js';
 import '../js/components/slider.js';
-import '../js/components/responsive-ui.js';
 
+
+//- empty files
 import '../js/components/loadEvent.js';
 
-console.log("Hello World from your main file!");
+console.log("app.js ended");

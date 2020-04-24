@@ -1,3 +1,5 @@
+console.log('## tabs UI');
+
 const tabNav = document.getElementById('TabNavigation');
 
 // Event Listeners
@@ -9,6 +11,7 @@ tabNav.addEventListener('click', function (e) {
 
 // Assign is-active class to clicked item
 function selectItem(el) {
+  console.log('selectItem()');
   // console.log(el.classList);
 
   if (el && el.classList.contains('js-nav-item')) {
