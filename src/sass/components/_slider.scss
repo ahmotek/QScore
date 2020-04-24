@@ -65,6 +65,20 @@
 
 @for $i from 1 through 3 {
   .slide-#{$i} {
-    transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
+    @include respond-to("small") {
+      transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
+    }
+  }
+
+  @if #{$i} == 1 {
+    
+  }
+
+  @if #{$i} == 2 {
+    
+  }
+
+  @if #{$i} == 3 {
+    
   }
 }

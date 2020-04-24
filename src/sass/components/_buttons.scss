@@ -1,5 +1,6 @@
 .button {
   @include button-structure(map-get($general-font-size--map, main));
+  user-select: none;
 
   &--primary {
     @include button-style($button-primary-color, inherit);

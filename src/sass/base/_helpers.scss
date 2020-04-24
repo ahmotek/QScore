@@ -64,6 +64,11 @@
   }
 }
 
+.is-disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
 .is-active {
   // defined with it's element
 }

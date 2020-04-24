@@ -5,7 +5,7 @@
   margin-bottom: $vertical-space;
 
   @include respond-to("small") {
-    // width: 300%;
+    pointer-events: none;
   }
 
   & > * {
@@ -28,7 +28,6 @@
             display: block;
             user-select: none;
             cursor: default;
-            pointer-events: none;
           }
         }
       }
