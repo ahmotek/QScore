@@ -1,0 +1,19 @@
+/// @type Gradient
+// $type: linear || repeating-linear
+// $dir: to right || to left || deg
+
+// To finish later
+
+@mixin gradient($gradient-type, $start-color, $start-pos, $end-color, $end-pos, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-#{$gradient-type}-gradient(top, $start-color $start-pos, $end-color $end-pos);
+    background: #{$gradient-type}-gradient(to bottom, $start-color $start-pos, $end-color $end-pos);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-#{$gradient-type}-gradient(left, $start-color $start-pos, $end-color $end-pos);
+    background: #{$gradient-type}-gradient(to right, $start-color $start-pos, $end-color $end-pos);
+  } @else {
+    background: -webkit-#{$gradient-type}-gradient(center, ellipse cover, $start-color $start-pos, $end-color $end-pos);
+    background: #{$gradient-type}-gradient(ellipse at center, $start-color $start-pos, $end-color $end-pos);
+  }
+}

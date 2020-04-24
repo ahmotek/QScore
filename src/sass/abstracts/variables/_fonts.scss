@@ -14,6 +14,7 @@ $raleway: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 
 //- Regular font family
 /// @type List
+
 // $heading-font-stack: $ralewayBlack;
 // $heading-font-small-stack: $ralewayLight;
 // $text-font-stack: $quicksandRegular;
@@ -37,7 +38,7 @@ $heading-font-1--map : (
   large: 8.5em // 85px / 10px
 ); 
 $heading-font-1-small--map : (
-  small: 45.283%, //24px / 53px
+  small: 46.5%,
   // medium: 42.5%, // TBD if needed
   large: 40% // 34px (required font-size) / 85px (parent font-size);
 );
@@ -57,4 +58,11 @@ $parragraph--map: (
   small: 1.1em,
   // medium: 1em,
   large: 1.3em
+);
+
+$general-font-size--map: (
+  main: 1.7rem, // map-get($general-font-size--map, main)
+  header-list: 1.4rem, // map-get($general-font-size--map, header-list)
+  final-price-default: 3em, // map-get($general-font-size--map, final-price-default)
+  currency: 2.2rem // map-get($general-font-size--map, currency)
 );

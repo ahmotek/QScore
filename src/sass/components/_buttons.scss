@@ -1,18 +1,17 @@
 .button {
-  width: 100%;
-  padding: 2rem 1rem;
-  // font-family: $quicksandMedium;
-  font-weight: map-get($text-font-weight, medium);
-  font-size: 1.7rem;
-  border-radius: $button-radius;
+  @include button-structure(map-get($general-font-size--map, main));
 
   &--primary {
-    background-color: $button-primary-color;
+    @include button-style($button-primary-color, inherit);
   }
 
-  &--icon {
-    display: inline-block;
-    width: auto;
-    padding: 1rem;
+  &--icon-prev,
+  &--icon-next {
+    @include button-structure($font-size: inherit, $padding: $vertical-space / 2, $width: auto, $radius: 0, $is-inline: true);
+    @include button-style($is-button-icon: true);
+  }
+
+  &--icon-next {
+    order: 1;
   }
 }

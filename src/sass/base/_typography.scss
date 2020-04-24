@@ -18,7 +18,7 @@ h1 {
   white-space: nowrap;
 
   @include respond-to('small') {
-    font-size: 11.5vw;
+    font-size: 12vw;
     line-height: 1em;
   }
 
@@ -98,16 +98,16 @@ h6 {
 
 p {
   line-height: 1.5;
-  
+
   @include respond-to('small') {
     font-size: map-get($parragraph--map, small);
   }
 
-  @include respond-to('medium') {
-    font-size: map-get($parragraph--map, medium);
-  }
+  // @include respond-to('medium') {
+  //   font-size: map-get($parragraph--map, medium);
+  // }
 
-  @include respond-to('large') {
+  @include respond-to('medium-large') {
     font-size: map-get($parragraph--map, large);
   }
 }

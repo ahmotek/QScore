@@ -27,7 +27,7 @@ body {
   }
 
   @include respond-to('medium-large') {
-    background: mix($gradient-bg-start-color, $gradient-bg-stop-color, 55%); /* Old browsers */
+    background: mix($gradient-bg-start-color, $gradient-bg-stop-color, 55%); /* fallback */
     background: -moz-radial-gradient(
       center 33.33vh,
       ellipse cover,
@@ -48,5 +48,16 @@ body {
       $gradient-bg-start-color 33.33%,
       $gradient-bg-stop-color 100%
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+}
+
+.badge {
+  margin: 0 auto;
+
+  @include respond-to("small") {
+    max-width: 146px;
+  }
+
+  @include respond-to("medium-large") {
   }
 }

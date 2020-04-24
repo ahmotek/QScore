@@ -1,6 +1,25 @@
-// Form Elements:
-// label
+// #Form Elements:
+
+// ## Form
+.product-form {
+  @include respond-to('small') {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  @include respond-to('medium-large') {
+    width: 100%;
+  }
+}
+
+// ## Labels
 label {
-  font-size: 1.7rem;
+  font-size: map-get($general-font-size--map, main);
   cursor: pointer;
+}
+
+// ## Input
+input {
+  &[type='radio'] {
+  }
 }

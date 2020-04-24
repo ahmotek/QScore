@@ -1,0 +1,37 @@
+@mixin button-structure($font-size, $padding: $vertical-space $page-gutter/4, $width: 100%, $radius: $button-radius, $is-inline: false) {
+  @if $is-inline {
+    display: inline-block;
+  }
+
+  width: $width;
+  padding: $padding;
+  font-size: $font-size;
+  font-weight: map-get($text-font-weight, medium);
+  border-radius: $radius;
+  cursor: pointer;
+}
+
+@mixin button-style($bg-color: null, $color: null, $is-button-icon: false) {
+  @if $is-button-icon {
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+      }
+    }
+  } @else {
+    background-color: $bg-color;
+    color: $color;
+
+    &:active {
+      background: darken($bg-color, 15%);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: darken($bg-color, 10%);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

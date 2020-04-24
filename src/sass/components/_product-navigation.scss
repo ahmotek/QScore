@@ -1,0 +1,60 @@
+// Components
+.tab-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $vertical-space;
+
+  @include respond-to("small") {
+    // width: 300%;
+  }
+
+  & > * {
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @include respond-to("small") {
+      display: none;
+      min-width: 100%;
+      padding-top: $vertical-space;
+      padding-bottom: $vertical-space;
+      font-size: 2.4em;
+      font-weight: map-get($text-font-weight, bold);
+      background-color: $section-header-bg;
+      color: $white;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          .slide-item:nth-child(#{$i}) & {
+            display: block;
+            user-select: none;
+            cursor: default;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    @include respond-to("medium-large") {
+      @include button-structure(
+        $font-size: map-get($general-font-size--map, main),
+        $padding: #{$page-gutter / 4} 0,
+        $width: 30%,
+        $radius: $label-radius,
+        $is-inline: true
+      );
+      @include button-style($label-bg--unchecked, inherit);
+    }
+
+    &.is-active {
+      // @include respond-to("small") {
+      //   display: block;
+      // }
+
+      @include respond-to("medium-large") {
+        background-color: $label-bg--checked;
+        color: $white;
+        cursor: default;
+      }
+    }
+  }
+}

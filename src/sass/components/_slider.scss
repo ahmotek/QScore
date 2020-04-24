@@ -1,0 +1,70 @@
+#slideContainer {
+  transition: all 300ms ease-in-out;
+}
+
+.slide-item {
+  @include respond-to("small") {
+    overflow: hidden;
+    min-width: 100%;
+    max-width: var(--card-max-width);
+    padding-bottom: $vertical-space;
+    background-color: $white;
+    box-shadow: 0 13px 23px rgba(0, 0, 0, 0.03);
+    border-radius: $section-radius;
+
+    & > *:not(.tab-navigation) {
+      max-width: calc(100% - 4rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & + .slide-item {
+      margin-left: $page-gutter;
+    }
+  }
+}
+
+.slide-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $vertical-space / 2;
+
+  &__item {
+    display: flex;
+    padding: $vertical-space / 2;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      align-self: center;
+      width: $vertical-space / 2;
+      height: $vertical-space / 2;
+      background-color: $pagination-color;
+      border-radius: 50%;
+    }
+
+    &:not(.is-active) {
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+
+    &.is-active {
+      cursor: default;
+
+      &::before {
+        background-color: white;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 3 {
+  .slide-#{$i} {
+    transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
+  }
+}

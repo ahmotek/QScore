@@ -1,0 +1,116 @@
+// # Price related components
+// ## Price desglose values
+.display {
+  display: grid;
+  margin-bottom: $vertical-space;
+  border: 1px solid $border-color;
+  border-radius: $section-radius;
+
+  @include respond-to("medium-large") {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include respond-to("large") {
+    max-width: calc(100% - 6rem);
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+
+  &__item {
+    @include respond-to("small") {
+      padding: 1em;
+    }
+
+    @include respond-to("medium-large") {
+      padding: 2rem 1rem;
+    }
+
+    &:nth-child(1) {
+      @include respond-to("medium-large") {
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    &:nth-child(2) {
+      @include respond-to("medium-large") {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    &:nth-child(3) {
+      @include respond-to("medium-large") {
+        border-right: 1px solid $border-color;
+      }
+    }
+  }
+
+  &__item-title,
+  &__item-value {
+    @include respond-to("small") {
+      display: inline-block;
+    }
+  }
+
+  &__item-title {
+    font-size: map-get($parragraph--map, small);
+    font-weight: map-get($text-font-weight, bold);
+    color: $cell-title;
+
+    @include respond-to("small") {
+      margin-right: 0.6rem;
+    }
+
+    .display__item--shipping & {
+      color: $cell-title-darker;
+    }
+  }
+
+  &__item-value {
+    font-size: map-get($general-font-size--map, main);
+    font-weight: map-get($text-font-weight, regular);
+
+    &--pos {
+      color: $positive-color;
+    }
+
+    &--neg {
+      color: $negative-color;
+      text-decoration: line-through;
+    }
+  }
+}
+
+// ## Display Final Price
+.price {
+  display: inline-block;
+  font-size: map-get($general-font-size--map, final-price-default);
+  line-height: 1;
+  margin-bottom: $vertical-space / 2;
+  padding-right: $vertical-space / 4;
+  padding-bottom: $vertical-space / 2;
+  padding-left: $vertical-space / 4;
+  border-bottom: 1px solid $border-color;
+
+  &__currency {
+    font-size: map-get($general-font-size--map, currency);
+    color: $text-color-lighter;
+  }
+
+  &__integer {
+    font-size: 4.7rem;
+  }
+
+  &__decimals {
+    font-weight: map-get($text-font-weight, medium);
+  }
+}
+
+.price-legend {
+  font-size: map-get($parragraph--map, small) / map-get($general-font-size--map, final-price-default);
+  font-weight: map-get($text-font-weight, bold);
+  text-transform: uppercase;
+}

@@ -6,13 +6,13 @@ $light-grey: #ebf1fa !default;
 $steel-blue: #2d589a !default;
 $cornflower-blue: mix($white, $steel-blue, 70%) !default;
 $steel-grey: mix($white, $steel-blue, 30%) !default;
+$low-blue: #3e6891 !default;
 $light-sky-blue: #76a6ef !default;
 $slate-blue: #5d5ce0 !default;
 $grey: #98a0af;
 $dark-grey: #6b717b;
 $green-yellow: #d7f741 !default;
 $black: #000 !default;
-
 $red: #f77163 !default;
 $green: #4abe33 !default;
 
@@ -38,6 +38,8 @@ $label-bg--unchecked: $dirty-white;
 
 $negative-color: $red;
 $positive-color: $green;
+
+$pagination-color: $low-blue;
 
 $border-color: transparentize($black, .925);
 

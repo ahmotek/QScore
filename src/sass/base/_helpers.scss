@@ -34,18 +34,36 @@
   width: 1px;
 }
 
-.hide-for-sml {
+.hide-small {
   @include respond-to('small') {
     display: none !important;
   }
 }
 
-.hide-for-med-lg {
+.hide-small-medium {
+  @include respond-to('small-medium') {
+    display: none !important;
+  }
+}
+
+.hide-medium {
+  @include respond-to('medium') {
+    display: none !important;
+  }
+}
+
+.hide-medium-large {
   @include respond-to('medium-large') {
     display: none !important;
   }
 }
 
-.is-checked {
+.hide-large {
+  @include respond-to('large') {
+    display: none !important;
+  }
+}
+
+.is-active {
   // defined with it's element
 }

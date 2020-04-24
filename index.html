@@ -41,7 +41,7 @@
         </li>
       </ul>
     </div>
-    <div class="header__column header__column--image hide-for-sml">
+    <div class="header__column header__column--image hide-small">
       <img class="header__image" src="/src/assets/images/energy-renew.png" alt="Energy renew dietary supplement pot"
         width="866px" height="558px">
     </div>
@@ -49,77 +49,156 @@
   <main class="main">
     <section class="section section--primary">
       <h2 class="section__title">Choose Your Package</h2>
-      <div class="section__body">
-        <div class="section__labels-group">
-          <label class="section__label" for="ProdQ1">1 Jar</label>
-          <label class="section__label is-checked" for="ProdQ3">3 Jars</label>
-          <label class="section__label" for="ProdQ6">6 Jars</label>
-        </div>
-        <!-- FIND BETTER NAMING - MORE ABSTRACT -->
-        <div class="section__grid">
-          <div class="section__cell">
-            <div class="section__cell-title">Regular Price:</div>
-            <div class="section__cell-value section__cell-value--neg">$209.85</div>
-          </div>
-          <div class="section__cell hide-for-sml">
-            <div class="section__cell-title">Today's Discount:</div>
-            <div class="section__cell-value section__cell-value--pos">$12.90</div>
-          </div>
-          <div class="section__cell">
-            <div class="section__cell-title">Instant Savings:</div>
-            <div class="section__cell-value section__cell-value--pos">$87.90</div>
-          </div>
-          <div class="section__cell section__cell--shipping">
-            <div class="section__cell-title">
-              <svg class="icon icon--section-grid">
-                <use xlink:href="/src/assets/images/sprite.svg#SHIPPING" />
-              </svg>Shipping:
+      <form class="product-form" method="get" id="productForm">
+        <div id="slideContainer" class="section__body">
+          <!-- Element to clone via JS on small devices -->
+          <div class="slide-item">
+            <div id="TabNavigation" class="tab-navigation js-nav">
+              <label class="tab-navigation__label js-nav-item is-active" for="ProdQ1">1 Jar</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ3">3 Jars</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ6">6 Jars</label>
             </div>
-            <div class="section__cell-value section__cell-value--pos">FREE</div>
+            <div class="display">
+              <div class="display__item">
+                <div class="display__item-title">Regular Price:</div>
+                <div class="display__item-value display__item-value--neg">$209.85</div>
+              </div>
+              <div class="display__item hide-small">
+                <div class="display__item-title">Today's Discount:</div>
+                <div class="display__item-value display__item-value--pos">$12.90</div>
+              </div>
+              <div class="display__item">
+                <div class="display__item-title">Instant Savings:</div>
+                <div class="display__item-value display__item-value--pos">$87.90</div>
+              </div>
+              <div class="display__item display__item--shipping">
+                <div class="display__item-title">
+                  <svg class="icon icon--section-grid">
+                    <use xlink:href="/src/assets/images/sprite.svg#SHIPPING" />
+                  </svg>Shipping:
+                </div>
+                <div class="display__item-value display__item-value--pos">FREE</div>
+              </div>
+            </div>
+            <div class="price">
+              <span class="price__currency">$</span><span class="price__integer">121</span>.<span
+                class="price__decimals">95</span>
+            </div>
+            <div class="price-legend">(This is a one time payment)</div>
           </div>
-        </div>
 
-        <!-- FIND BETTER NAMING - MORE ABSTRACT -->
-        <div class="section__total">
-          <div class="final-price">
-            <span class="final-price__currency">$</span><span class="final-price__integer">121</span>.<span
-              class="final-price__decimals">95</span></div>
-          <div class="section__total-footer">(This is a one time payment)</div>
-        </div>
-      </div>
-      <div class="section__footer">
-        <div class="section__radio-group hide-for-med-lg">
-          <div class="button button--icon">
-            <svg class="icon icon--chevron-left">
-              <use xlink:href="/src/assets/images/sprite.svg#CHEVRON" />
-            </svg>
+          <!-- Element to cloned via JS on small devices -->
+          <div class="slide-item is-active">
+            <div id="TabNavigation" class="tab-navigation js-nav">
+              <label class="tab-navigation__label js-nav-item is-active" for="ProdQ1">1 Jar</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ3">3 Jars</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ6">6 Jars</label>
+            </div>
+            <div class="display">
+              <div class="display__item">
+                <div class="display__item-title">Regular Price:</div>
+                <div class="display__item-value display__item-value--neg">$209.85</div>
+              </div>
+              <div class="display__item hide-small">
+                <div class="display__item-title">Today's Discount:</div>
+                <div class="display__item-value display__item-value--pos">$12.90</div>
+              </div>
+              <div class="display__item">
+                <div class="display__item-title">Instant Savings:</div>
+                <div class="display__item-value display__item-value--pos">$87.90</div>
+              </div>
+              <div class="display__item display__item--shipping">
+                <div class="display__item-title">
+                  <svg class="icon icon--section-grid">
+                    <use xlink:href="/src/assets/images/sprite.svg#SHIPPING" />
+                  </svg>Shipping:
+                </div>
+                <div class="display__item-value display__item-value--pos">FREE</div>
+              </div>
+            </div>
+            <div class="price">
+              <span class="price__currency">$</span><span class="price__integer">121</span>.<span
+                class="price__decimals">95</span>
+            </div>
+            <div class="price-legend">(This is a one time payment)</div>
           </div>
-          <input type="radio" id="ProdQ1" name="products-group" value="ProdQ1">
-          <input type="radio" id="ProdQ3" name="products-group" value="ProdQ3" checked>
-          <input type="radio" id="ProdQ6" name="products-group" value="ProdQ6">
-          <div class="button button--icon">
-            <svg class="icon icon--chevron-right">
-              <use xlink:href="/src/assets/images/sprite.svg#CHEVRON" />
-            </svg>
+
+          <!-- Element to cloned via JS on small devices -->
+          <div class="slide-item">
+            <div id="TabNavigation" class="tab-navigation js-nav">
+              <label class="tab-navigation__label js-nav-item is-active" for="ProdQ1">1 Jar</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ3">3 Jars</label>
+              <label class="tab-navigation__label js-nav-item" for="ProdQ6">6 Jars</label>
+            </div>
+            <div class="display">
+              <div class="display__item">
+                <div class="display__item-title">Regular Price:</div>
+                <div class="display__item-value display__item-value--neg">$209.85</div>
+              </div>
+              <div class="display__item hide-small">
+                <div class="display__item-title">Today's Discount:</div>
+                <div class="display__item-value display__item-value--pos">$12.90</div>
+              </div>
+              <div class="display__item">
+                <div class="display__item-title">Instant Savings:</div>
+                <div class="display__item-value display__item-value--pos">$87.90</div>
+              </div>
+              <div class="display__item display__item--shipping">
+                <div class="display__item-title">
+                  <svg class="icon icon--section-grid">
+                    <use xlink:href="/src/assets/images/sprite.svg#SHIPPING" />
+                  </svg>Shipping:
+                </div>
+                <div class="display__item-value display__item-value--pos">FREE</div>
+              </div>
+            </div>
+            <div class="price">
+              <span class="price__currency">$</span><span class="price__integer">121</span>.<span
+                class="price__decimals">95</span>
+            </div>
+            <div class="price-legend">(This is a one time payment)</div>
           </div>
         </div>
-        <button class="button button--primary">
-          <svg class="icon">
-            <use xlink:href="/src/assets/images/sprite.svg#CART" />
-          </svg> Buy Now</button>
-      </div>
+        <div class="section__footer">
+          <div id="slideNavigation" class="slide-navigation js-nav hide-medium-large">
+            <span class="button button--icon-prev js-prev">
+              <svg class="icon icon--chevron-left">
+                <use xlink:href="/src/assets/images/sprite.svg#CHEVRON" />
+              </svg>
+            </span>
+              <!-- <span class="slide-navigation__item js-nav-item">
+                <input type="radio" id="ProdQ1" class="visually-hidden" name="productBundler" value="1">
+              </span>
+              <span class="slide-navigation__item js-nav-item is-active">
+                <input type="radio" id="ProdQ3" class="visually-hidden" name="productBundler" value="3" checked>
+              </span>
+              <span class="slide-navigation__item js-nav-item">
+                <input type="radio" id="ProdQ6" class="visually-hidden" name="productBundler" value="6">
+              </span> -->
+            <span class="button button--icon-next js-next">
+              <svg class="icon icon--chevron-right">
+                <use xlink:href="/src/assets/images/sprite.svg#CHEVRON" />
+              </svg>
+            </span>
+          </div>
+          <button class="button button--primary" type="submit" form="productForm" value="Submit">
+            <svg class="icon">
+              <use xlink:href="/src/assets/images/sprite.svg#CART" />
+            </svg> Buy Now</button>
+        </div>
+      </form>
     </section>
     <section class="section section--secondary">
       <h2 class="section__title">100% MONEY BACK GUARANTEE</h2>
       <div class="section__body">
-        <img src="/src/assets/images/guarantee.png" alt="90 Days Guarantee badge">
+        <img class="badge" src="/src/assets/images/guarantee.png" alt="90 Days Guarantee badge">
       </div>
       <div class="section__footer">
         <p>If you’re not 100% satisfied with your product for any reason, you’re covered by our money-back guarantee</p>
       </div>
     </section>
 
-    <section class="section section--tertiary hide-for-sml">
+    <section class="section section--tertiary hide-small">
       <h2 class="section__title">100 Pure</h2>
       <div class="section__body">
         <ul class="list list--detail">

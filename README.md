@@ -72,9 +72,9 @@ Note #2:
 ### Not delivered
 
 ### UI Defects
-1. Heading Mobile content is different than Heading Desktop - left Heading Desktop and adapted to fit;
-2. 'Online-Only' font-family is different between desktop and mobile - applied mobile version font-family
-
+1. Heading Mobile content is different than Heading Desktop - used Heading Desktop and adapted to fit;
+2. 'Online-Only' font-family is different between desktop and mobile (Myriad Pro on Desktop) - applied mobile version font-family (Quicksand)
+3. PSB styles are not pixel perfect but all 'unlogic' distances were sligtly aligned.
 
 ### Notes:
 1. Should use @import from google fonts and refactor CSS font-family value but google didn't API respond. Will check it later.
@@ -83,7 +83,9 @@ Note #2:
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
 </style>
 ```
-2. Images are not being copied
+2. Images are not being copied... :(
+
+3. 
 
 #### Time spent:
 21 April - start 19pm to 21pm - setup project and define basic variables to meet requirements;
