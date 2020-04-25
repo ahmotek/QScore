@@ -83,7 +83,15 @@ body {
   @include respond-to("small") {
     max-width: 146px;
   }
+}
+
+.product-image {
+  @include respond-to('small') {
+    margin-top: -2 * $vertical-space;
+    margin-bottom: -1.5 * $vertical-space;
+  }
 
   @include respond-to("medium-large") {
+    display: none;
   }
 }

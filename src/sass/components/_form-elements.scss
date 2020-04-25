@@ -2,13 +2,16 @@
 
 // ## Form
 .product-form {
+  width: 100%;
+
   @include respond-to('small') {
-    width: 100%;
     max-width: 400px;
   }
 
   @include respond-to('medium-large') {
-    width: 100%;
+    overflow: hidden;
+    background-color: $white;
+    border-radius: 0 0 $section-radius $section-radius;
   }
 }
 
