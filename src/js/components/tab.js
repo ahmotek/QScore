@@ -1,6 +1,6 @@
-console.log('## tabs UI');
+console.log('## Tabs UI and Functionality');
 
-const tabNav = document.getElementById('TabNavigation');
+const tabNav = document.getElementById('TabNav');
 
 // Event Listeners
 tabNav.addEventListener('click', function (e) {

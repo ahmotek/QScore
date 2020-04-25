@@ -2,13 +2,13 @@
 import '../sass/main.scss';
 
 // import JS partials - Order matters!!
+// import '../js/components/loadProducts.js';
 import '../js/components/cloneProducts.js';
-import './components/resizing.js';
 import '../js/components/tab.js';
 import '../js/components/slider.js';
 
 
 //- empty files
-import '../js/components/loadEvent.js';
+import './components/resizing.js';
 
 console.log("app.js ended");

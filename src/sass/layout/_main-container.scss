@@ -34,7 +34,7 @@
 
     .section--primary & {
       @include respond-to("small") {
-        padding-bottom: $vertical-space / 2;
+        padding-bottom: 1.5rem; // instead of $vertical-space based number for px-perfect
         font-weight: map-get($text-font-weight, bold);
         text-transform: uppercase;
         color: $section-header-color;

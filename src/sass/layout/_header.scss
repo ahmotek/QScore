@@ -4,7 +4,7 @@
 
   @include respond-to('small') {
     justify-content: flex-start;
-    margin-bottom: 4.5rem;
+    margin-bottom: 5.5rem; // instead of $vertical-space based number for px-perfect
   }
 
   @include respond-to('medium-large') {
@@ -19,19 +19,33 @@
     }
 
     &--content {
+      @include respond-to('small') {
+        padding-top: $vertical-space * 3;
+      }
+
+      @include respond-to('medium-large') {
       padding-top: 6vw;
+      }
+
+      
     }
 
-    &--image {
-      @include respond-to('medium-large') {
-        position: relative;
-        order: 1;
-      }
-    }
+    // &--image {
+    //   @include respond-to('medium-large') {
+    //     position: relative;
+    //     order: 1;
+    //   }
+    // }
   }
   
   &__title {
-    margin-bottom: $vertical-space;
+    @include respond-to('small') {
+      margin-bottom: $vertical-space / 2;
+    }
+
+    @include respond-to('medium-large') {
+      margin-bottom: $vertical-space;
+    }
   }
 
   &__image {

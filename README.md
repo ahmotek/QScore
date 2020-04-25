@@ -83,7 +83,7 @@ Note #2:
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
 </style>
 ```
-2. Images are not being copied... :(
+2. Images from html are not being cloned to dist folder... :(
 
 3. When on desktop select 6 Jars option and the resize, 6 Jars should be selected.
 

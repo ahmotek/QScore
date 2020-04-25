@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "1 Jar",
+    "imageName": "1-product.png",
+    "quantity": 1,
+    "regularPrice": "$74.95",
+    "newPrice": "$49.95"
+  },
+  {
+    "id": 2,
+    "name": "3 Jars",
+    "imageName": "3-products.png",
+    "quantity": 3,
+    "regularPrice": "$224.85",
+    "newPrice": "$134.85"
+  },
+  {
+    "id": 3,
+    "name": "6 Jars",
+    "imageName": "6-products.png",
+    "quantity": 6,
+    "regularPrice": "$449.70",
+    "newPrice": "$254.70"
+  }
+]

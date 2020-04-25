@@ -1,4 +1,4 @@
-console.log('## responsive UI - empty');
+console.log('## On Resizing - empty');
 // JS partial to control responsiveness of the form
 // following https://stackoverflow.com/questions/45905160/javascript-on-window-resize-end
 // function debounce(func){

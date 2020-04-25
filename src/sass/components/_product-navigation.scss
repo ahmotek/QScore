@@ -1,5 +1,5 @@
 // Components
-.tab-navigation {
+ul.tab-nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: $vertical-space;
@@ -41,6 +41,7 @@
         $radius: $label-radius,
         $is-inline: true
       );
+      
       @include button-style($label-bg--unchecked, inherit);
     }
 
