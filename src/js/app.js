@@ -5,12 +5,10 @@ import '../sass/main.scss';
 import '../js/components/loadProducts.js';
 import '../js/components/cloneProducts.js';
 
-// this loads too early
-import '../js/components/tab.js';
 import '../js/components/slider.js';
-
+import '../js/components/tab.js';
 
 //- empty files
 import './components/resizing.js';
 
-console.log("app.js ended");
+console.log("Hello world!");

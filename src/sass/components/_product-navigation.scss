@@ -4,8 +4,14 @@ ul.tab-nav {
   justify-content: space-between;
   margin-bottom: $vertical-space;
 
-  @include respond-to("small") {
-    pointer-events: none;
+  // @include respond-to("small") {
+  //   pointer-events: none;
+  // }
+
+  &:not(#TabNav1) {
+    @include respond-to("medium-large") {
+      // display: none;
+    }
   }
 
   & > * {
@@ -41,7 +47,7 @@ ul.tab-nav {
         $radius: $label-radius,
         $is-inline: true
       );
-      
+
       @include button-style($label-bg--unchecked, inherit);
     }
 

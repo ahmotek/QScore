@@ -159,10 +159,10 @@
     }
 
     .section--primary & {
-      @include respond-to("medium-large") {
-        background-color: $white;
-        border-radius: 0 0 $section-radius $section-radius;
-      }
+      // @include respond-to("medium-large") { // appiled to form
+      //   background-color: $white;
+      //   border-radius: 0 0 $section-radius $section-radius;
+      // }
     }
 
     .section--secondary &,

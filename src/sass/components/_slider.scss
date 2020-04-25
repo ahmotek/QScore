@@ -1,11 +1,18 @@
 #slideContainer {
+  display: flex;
   transition: all 300ms ease-in-out;
 }
 
 .slide-item {
+  min-width: 100%;
+
+  & + .slide-item {
+    margin-left: $page-gutter;
+  }
+
   @include respond-to("small") {
     overflow: hidden;
-    min-width: 100%;
+    // min-width: 100%;
     max-width: var(--card-max-width);
     padding-bottom: $vertical-space;
     background-color: $white;
@@ -16,17 +23,6 @@
       max-width: calc(100% - 4rem);
       margin-left: auto;
       margin-right: auto;
-    }
-
-    & + .slide-item {
-      margin-left: $page-gutter;
-    }
-  }
-
-  @include respond-to('medium-large') {
-    & + .slide-item {
-      display: none;
-      pointer-events: none;
     }
   }
 }
@@ -75,17 +71,29 @@
     @include respond-to("small") {
       transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
     }
-  }
 
-  @if #{$i} == 1 {
-    
-  }
+    @include respond-to("medium-large") {
+      transform: translateX(calc(-100% * #{$i - 1} + #{$page-gutter / 2} * #{$i - 1}));
 
-  @if #{$i} == 2 {
+      .tab-nav {
+        transform: translateX(calc(100% * #{$i - 1} + #{$page-gutter} * #{$i - 1}));
+        transition: none;
+      }
+    }
     
-  }
-
-  @if #{$i} == 3 {
+    //- Test for sliders
+    // .slide-item {
+    //   @if $i == 1 {
+    //     background-color: wheat;
+    //   }
     
+    //   @if $i == 2 {
+    //     background-color: pink;
+    //   }
+    
+    //   @if $i == 3 {
+    //     background-color: bisque;
+    //   }
+    // }
   }
 }

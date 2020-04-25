@@ -1,13 +1,13 @@
-console.log('## Clone Products - Slide Item');
+// import paginationItem from './slider.js';
 
-let i = 0;
+console.log('## 2. Clone Products - Slide Item');
 
 // TODO: Optimise with loop
 function cloneSlideItem() {
-  console.log('cloneSlideItem()');
+  // console.log('cloneSlideItem()');
 
-  // slideContainer parent element to append to.
-  const slideContainer = document.getElementById('slideContainer');
+  // slide parent element to append to.
+  const slide = document.getElementById('slideContainer');
   // slideItem[0] element to clone
   const slideItem = document.getElementById('slideItem');
   
@@ -26,8 +26,8 @@ function cloneSlideItem() {
   // console.log(tabNav1.id);
   // tabNav1.id = 'TabNav1';
 
-  // Append cloned slideItem to slideContainer
-  slideContainer.appendChild(slideItem1)
+  // Append cloned slideItem to slide
+  slide.appendChild(slideItem1)
   
   // ## Clone slideItem[2] and its child nodes
   const slideItem2 = slideItem.cloneNode(true);
@@ -42,8 +42,13 @@ function cloneSlideItem() {
   // console.log(tabNav2.id);
   // tabNav2.id = 'TabNav2';
 
-  // Append cloned slideItem to slideContainer
-  slideContainer.appendChild(slideItem2);
+  // Append cloned slideItem to slide
+  slide.appendChild(slideItem2);
 }
 
-cloneSlideItem(); // Prefer to clone even in any screen size for the resizing show
+cloneSlideItem();
+
+// paginationItem();
+
+// document.addEventListener('DOMContentLoaded', cloneSlideItem);
+

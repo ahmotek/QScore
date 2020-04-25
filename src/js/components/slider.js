@@ -1,4 +1,4 @@
-console.log('## Slider UI and Functionality');
+console.log('## 3. Slider UI and Functionality');
 
 const slideNav = document.getElementById('slideNavigation');
 
@@ -18,7 +18,7 @@ var slider = document.getElementById('slideContainer');
 //- 6. return activeElement and its index
 
 var getActiveElement = function () {
-  console.log('getActiveElement()');
+  // console.log('getActiveElement()');
 
   var active = 0;
 
@@ -74,7 +74,7 @@ var paginationItem = function () {
 
   var length = slideItem.length;
   var activeIndex = getActiveElement().index;
-  var paginationItemContainer = document.getElementById('slideNavigation');;
+  var paginationItemContainer = document.getElementById('slideNavigation');
   
   for (var i = 0; i < length; i++) { 
     var el = document.createElement('span');
@@ -122,10 +122,10 @@ var goToSlide = function (index) {
   var futureItem = slideItem[index];
 
   futureItem.classList.add('is-active');
-  document.querySelector('.slide-navigation__item.is-active').classList.remove('is-active'); //- add index Nº class to parent
+  document.querySelector('.slide-navigation__item.is-active').classList.remove('is-active'); //- To add index Nº class to parent
   
   // console.log(index);
-  slider.classList.add('slide-' + Number(index + 1));
+  slider.classList.add('slide-' + Number(index + 1)); //- add index to class
 
   // Storage paginationItem and assign active class
   var paginationItem = document.querySelectorAll('.slide-navigation__item');
@@ -146,7 +146,7 @@ var goToSlide = function (index) {
 }
 
 var arrowButton = function (prev) {
-  console.log('arrowButton()');
+  // console.log('arrowButton()');
 
   var active = getActiveElement();
   var activeIndex = active.index;
@@ -155,14 +155,6 @@ var arrowButton = function (prev) {
   removeClassesByPrefix(slider, 'slide-');
   goToSlide(futureItem.index);
 };
-
-buttonNext.addEventListener('click', function () {
-  arrowButton();
-});
-
-buttonPrev.addEventListener('click', function () {
-  arrowButton(true);
-});
 
 function removeClassesByPrefix(el, prefix) {
   console.log('removeClassesByPrefix()');
@@ -174,4 +166,19 @@ function removeClassesByPrefix(el, prefix) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', paginationItem);
+buttonNext.addEventListener('click', function () {
+  arrowButton();
+});
+
+buttonPrev.addEventListener('click', function () {
+  arrowButton(true);
+});
+
+paginationItem();
+
+// slider.addEventListener('change', function() {
+//   paginationItem();
+// });
+
+// export default paginationItem;
+// document.addEventListener('DOMContentLoaded', paginationItem);
