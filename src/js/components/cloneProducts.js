@@ -21,10 +21,10 @@ function cloneSlideItem() {
 
   // Change TabNav ID for slideItem1
   // console.log(slideItem1.firstChild.nextElementSibling);
-  let tabNav1 = slideItem1.firstChild.nextElementSibling;
+  // let tabNav1 = slideItem1.firstChild.nextElementSibling;
 
   // console.log(tabNav1.id);
-  tabNav1.id = 'TabNav1';
+  // tabNav1.id = 'TabNav1';
 
   // Append cloned slideItem to slideContainer
   slideContainer.appendChild(slideItem1)
@@ -37,10 +37,10 @@ function cloneSlideItem() {
   
   // Change TabNav ID for slideItem1
   // console.log(slideItem2.firstChild.nextElementSibling);
-  let tabNav2 = slideItem2.firstChild.nextElementSibling;
+  // let tabNav2 = slideItem2.firstChild.nextElementSibling;
 
   // console.log(tabNav2.id);
-  tabNav2.id = 'TabNav2';
+  // tabNav2.id = 'TabNav2';
 
   // Append cloned slideItem to slideContainer
   slideContainer.appendChild(slideItem2);

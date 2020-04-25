@@ -1,3 +1,5 @@
+// import './loadProducts.js';
+
 console.log('## Tabs UI and Functionality');
 
 const tabNav = document.getElementById('TabNav');
@@ -26,6 +28,7 @@ function selectItem(el) {
       }
 
       el.classList.add('is-active');
+
     }
   }
 }

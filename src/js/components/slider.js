@@ -91,8 +91,6 @@ var paginationItem = function () {
   }
 }
 
-paginationItem();
-
 var getFutureItem = function (active, prev) {
   console.log('getFutureItem()');
 
@@ -175,3 +173,5 @@ function removeClassesByPrefix(el, prefix) {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', paginationItem);
