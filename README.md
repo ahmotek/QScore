@@ -84,7 +84,7 @@ It was sligtly aligned on the CSS side.
 ```
 2. Images from html are not being cloned to dist folder as well as the json file... :( (related to webpack misconfiguration)
 3. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS, for bigger screens.
-4. Mobile test should have been done more exhaustively.
+4. Mobile test should have been done with more detail.
 
 #### Consider future iteration:
 1. Code Refactor :)
