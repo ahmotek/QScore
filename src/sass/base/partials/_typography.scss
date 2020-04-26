@@ -7,9 +7,7 @@ body {
   color: $text-color;
 }
 
-//- TBD Headings, Parragraphs
 h1 {
-  // font-family: $heading-font-stack;
   font-family: $raleway;
   font-weight: map-get($text-font-weight, black);
   letter-spacing: -0.025em;
@@ -22,19 +20,18 @@ h1 {
     line-height: 1em;
   }
 
-  @include respond-to('medium') {
+  @include respond-to('medium-l') {
     // make font and line-height proportional to viewport width to auto-adapt on medium screen sizes
     font-size: 5.9vw;
     line-height: 5.25vw;
   }
 
-  @include respond-to('large') {
+  @include respond-to('large-l') {
     font-size: map-get($heading-font-1--map, large);
     line-height: 7.5rem;
   }
 
   small {
-    // font-family: $heading-font-small-stack;
     font-weight: map-get($text-font-weight, light);
     text-transform: initial;
     letter-spacing: -0.025em;
@@ -50,12 +47,10 @@ h1 {
 
     b {
       @include respond-to('small') {
-        // font-family: $ralewayBold;
         font-weight: map-get($text-font-weight, bold);
       }
 
       @include respond-to('medium-large') {
-        // font-family: $ralewayRegular;
         font-weight: map-get($text-font-weight, regular);
       }
     }
@@ -63,7 +58,6 @@ h1 {
 }
 
 h2 {
-  // font-family: $text-font-stack;
   font-family: $quicksand;
   font-weight: map-get($text-font-weight, regular);
 
@@ -71,9 +65,9 @@ h2 {
     font-size: map-get($heading-font-2--map, small);
   }
 
-  // @include respond-to('medium') {
-  //   font-size: map-get($heading-font-2--map, medium);
-  // }
+  @include respond-to('medium') {
+    font-size: map-get($heading-font-2--map, medium);
+  }
 
   @include respond-to('large') {
     font-size: map-get($heading-font-2--map, large);
@@ -82,6 +76,22 @@ h2 {
 
 h3 {
   font-size: $heading-font-3;
+
+  &.product-title {
+    @include respond-to("small") {
+      min-width: 100%;
+      padding-top: .75 * $vertical-space;
+      padding-bottom: .75 * $vertical-space;
+      font-size: 2.4em;
+      font-weight: map-get($text-font-weight, bold);
+      background-color: $section-header-bg;
+      color: $white;
+    }
+  
+    @include respond-to("medium-large") {
+      display: none;
+    }
+  }
 }
 
 h4 {

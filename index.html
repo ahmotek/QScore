@@ -41,21 +41,23 @@
         </li>
       </ul>
     </div>
+    <img class="header__image hide-small" src="src/assets/images/energy-renew.png" alt="Goundry MD Energy Renew Jar">
   </header>
   <main class="main">
     <section class="section section--primary">
       <h2 class="section__title">Choose Your Package</h2>
       <form class="product-form" method="get" id="productForm">
+        <ul id="TabNav" class="section__header tab-nav js-nav hide-small">
+          <li class="tab-nav__item js-tab-nav is-active" data-product="prod1">1 Jar</li>
+          <li class="tab-nav__item js-tab-nav" data-product="prod2">3 Jars</li>
+          <li class="tab-nav__item js-tab-nav" data-product="prod3">6 Jars</li>
+        </ul>
         <div id="slideContainer" class="section__body">
           <!-- Element to clone via JS on small devices -->
           <div id="slideItem" class="slide-item">
-            <ul id="TabNav1" class="tab-nav js-nav">
-              <li class="tab-nav__item js-nav-item is-active" data-product="prod1">1 Jar</li>
-              <li class="tab-nav__item js-nav-item" data-product="prod2">3 Jars</li>
-              <li class="tab-nav__item js-nav-item" data-product="prod3">6 Jars</li>
-            </ul>
+            <h3 class="product-title">1 Jar</h3>
             <div class="display">
-              <div class="display__item">
+              <div class="display__item"> 
                 <div class="display__item-title">Regular Price:</div>
                 <div class="display__item-value display__item-value--neg">$000.00</div>
               </div>

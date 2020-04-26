@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  max-width: none;
+  color: $heading-1-color;
+
+  position: relative;
+
+  @include respond-to("small") {
+    justify-content: flex-start;
+    margin-bottom: 5.5rem; // instead of using $vertical-space based number for px-perfect
+  }
+
+  @include respond-to("medium-large") {
+    justify-content: flex-end;
+  }
+
+  &__column {
+    @include respond-to("medium-large") {
+      width: 50%;
+      padding: 7rem 0 12rem;
+    }
+
+    &--content {
+      @include respond-to("small") {
+        padding-top: $vertical-space * 3;
+      }
+
+      @include respond-to("medium-large") {
+        padding-top: 6vw;
+      }
+    }
+  }
+
+  &__title {
+    @include respond-to("small") {
+      margin-bottom: $vertical-space / 2;
+    }
+
+    @include respond-to("medium-large") {
+      margin-bottom: $vertical-space;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    
+    width: 65vw;
+    transform: translateY(-50%);
+    z-index: map-get($z-index--map, negative);
+
+    @include respond-to("medium") {
+      top: 50%;
+      left: -8vw;
+    }
+
+    @include respond-to("large") {
+      top: 56%;
+      left: -4vw;
+    }
+  }
+}

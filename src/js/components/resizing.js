@@ -1,4 +1,5 @@
-// console.log('## On Resizing - empty');
+// # This partial is to catch the resizing of the window and apply specific functions
+
 // JS partial to control responsiveness of the form
 // following https://stackoverflow.com/questions/45905160/javascript-on-window-resize-end
 // function debounce(func){
@@ -14,20 +15,18 @@
 
 // window.addEventListener('resize',debounce(function(e){
 //   console.log('end of resizing');
-//   // let windowWidth = window.innerWidth;
-//   // let windowHeight = window.innerHeight;
+//   let windowWidth = window.innerWidth;
+//   let windowHeight = window.innerHeight;
 
-//   // console.log(windowWidth + ' X ' + windowHeight);
-//   // console.log(typeof(windowWidth) + ' X ' + typeof(windowHeight));
+//   console.log(windowWidth + ' X ' + windowHeight);
+//   console.log(typeof(windowWidth) + ' X ' + typeof(windowHeight));
 
-//   // if(windowWidth <= 768) {
-//   //   console.log('#### I\'m on mobile view');
-//   //   cloneSlideItem();
+//   if(windowWidth <= 768) {
+//     console.log('#### I\'m on mobile view');
 
-//   // } else {
-//   //   console.log('#### I\'m on desktop view');
-//     // deleteSlideItem();
+//   } else {
+//     console.log('#### I\'m on desktop view');
 
-//   // }
+//   }
 
 // }));

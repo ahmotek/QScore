@@ -1,6 +1,8 @@
 #slideContainer {
   display: flex;
-  transition: all 300ms ease-in-out;
+  @include respond-to('small') {
+    transition: all 300ms ease-in-out;
+  }
 }
 
 .slide-item {
@@ -12,7 +14,6 @@
 
   @include respond-to("small") {
     overflow: hidden;
-    // min-width: 100%;
     max-width: var(--card-max-width);
     padding-bottom: $vertical-space;
     background-color: $white;
@@ -66,20 +67,23 @@
   }
 }
 
+// Handle slide animation
 @for $i from 1 through 3 {
   .slide-#{$i} {
-    @include respond-to("small") {
-      transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
-    }
-
-    @include respond-to("medium-large") {
-      transform: translateX(calc(-100% * #{$i - 1} + #{$page-gutter / 2} * #{$i - 1}));
-
-      .tab-nav {
-        transform: translateX(calc(100% * #{$i - 1} + #{$page-gutter} * #{$i - 1}));
-        transition: none;
+    #slideContainer {
+      @include respond-to("small") {
+        transform: translateX(calc(-100% * #{$i - 1} - #{$page-gutter} * #{$i - 1}));
+      }
+  
+      @include respond-to("medium") {
+        transform: translateX(calc(-100% * #{$i - 1}));
+      }
+  
+      @include respond-to("large") {
+        transform: translateX(calc(-100% * #{$i - 1} + #{$page-gutter / 2} * #{$i - 1}));
       }
     }
+    
     
     //- Test for sliders
     // .slide-item {

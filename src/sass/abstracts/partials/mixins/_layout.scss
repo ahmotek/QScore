@@ -14,7 +14,12 @@
     padding-right: $layout-gutter / 2;
   }
 
-  @include respond-to('medium-large') {
+  @include respond-to('medium') {
+    padding-left: $layout-gutter * .75;
+    padding-right: $layout-gutter * .75;
+  }
+
+  @include respond-to('large') {
     padding-left: $layout-gutter;
     padding-right: $layout-gutter;
   }

@@ -1,5 +1,3 @@
-// #Form Elements:
-
 // ## Form
 .product-form {
   width: 100%;
@@ -12,17 +10,5 @@
     overflow: hidden;
     background-color: $white;
     border-radius: 0 0 $section-radius $section-radius;
-  }
-}
-
-// ## Labels
-label {
-  font-size: map-get($general-font-size--map, main);
-  cursor: pointer;
-}
-
-// ## Input
-input {
-  &[type='radio'] {
   }
 }

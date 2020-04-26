@@ -1,0 +1,47 @@
+// Tis partial controls tab navigation list
+ul.tab-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $vertical-space;
+  user-select: none;
+
+  & > * {
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @include respond-to("small") {
+      display: none;
+    }
+
+    @include respond-to("medium") {
+      @include button-structure(
+        $font-size: map-get($general-font-size--map, header-list),
+        $padding: #{$page-gutter / 4} 0,
+        $width: 30%,
+        $radius: $label-radius,
+        $is-inline: true
+      );
+    }
+
+    @include respond-to("large") {
+      @include button-structure(
+        $font-size: map-get($general-font-size--map, main),
+        $padding: #{$page-gutter / 4} 0,
+        $width: 30%,
+        $radius: $label-radius,
+        $is-inline: true
+      );
+    }
+
+    @include respond-to("medium-large") {
+      @include button-style($label-bg--unchecked, inherit);
+    }
+
+    &.is-active {
+      @include respond-to("medium-large") {
+        @include button-style($label-bg--checked, $white);
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
-console.log('## 3. Slider UI and Functionality');
+// # This partial controls the slide navigation functionality
 
 const slideNav = document.getElementById('slideNavigation');
 
-let slideItem = document.querySelectorAll('.slide-item');
-var buttonNext = document.querySelector('.js-next');
-var buttonPrev = document.querySelector('.js-prev');
-var threshold = 200;
+const slideItem = document.querySelectorAll('.slide-item');
+const buttonNext = document.querySelector('.js-next');
+const buttonPrev = document.querySelector('.js-prev');
 
-var slider = document.getElementById('slideContainer');
+const slider = document.getElementById('slideContainer');
+const productForm = document.getElementById('productForm');
 
 //- getActiveElement var with an anonymous function assigned (Funtion Expression):
 //- 1. set active items to 0
@@ -43,43 +43,88 @@ var getActiveElement = function () {
 }
 
 //- paginationItemClick expression with anonymous function:
-//- 1. get all paginationItems
+//- 1. get all slideNavigationItems
 //- 2. clickedItem: target element
-//- 3. clickedIndex: index of clicked item in paginationItems
-//- 4. select activeItem (before step 5)
-//- 5. activeItem remove active class
+//- 3. clickedIndex: index of clicked item in slideNavigationItems
+//- 4. select activeSlideItem (before step 5)
+//- 5. activeSlideItem remove active class
 //- 6. clickedItem add active class
 //- 7. call removeClassesByPrefix(); to remove existent slide- classes
 //- 8. call goToSlide() passing clickedIndex val
 
 var paginationItemClick = function (e) {
-  console.log('paginationItemClick()');
+  // console.log('paginationItemClick()');
 
-  var paginationItems = document.querySelectorAll('.slide-navigation__item');
-  var clickedItem = e.target;
-  var clickedIndex = Array.prototype.indexOf.call(paginationItems, clickedItem);
-  var activeItem = document.querySelector('.slide-navigation__item.is-active');
+  const slideNavigationItems = document.getElementsByClassName('js-slide-nav');
+  const tabNavigationItems = document.getElementsByClassName('js-tab-nav');
   
-  // console.log(paginationItems);
+  const activeSlideItem = document.querySelector('.js-slide-nav.is-active');
+  const activeTabItem = document.querySelector('.js-tab-nav.is-active');
+  
+  var clickedItem = e.target;
+  var clickedIndex = Array.prototype.indexOf.call(slideNavigationItems, clickedItem);
+  
+  var activeIndex = getActiveElement().index;
+
+  // console.log(slideNavigationItems);
   // console.log(clickedIndex);
 
-  activeItem.classList.remove('is-active');
-  clickedItem.classList.add('is-active');
-  removeClassesByPrefix(slider, 'slide-');
+  if (slideNavigationItems.length === tabNavigationItems.length) {
+    for (var i = 0; i < slideNavigationItems.length; i++) {
+      // Remove class from any tabNavigationItems or slideNavigationItems
+      if (slideNavigationItems[i].classList.contains('is-active')) {
+        // console.log(slideNavigationItems[i]);
+
+        slideNavigationItems[i].classList.remove('is-active');
+        tabNavigationItems[i].classList.remove('is-active');
+      }
+
+      activeSlideItem.classList.remove('is-active');
+      activeTabItem.classList.remove('is-active');
+      clickedItem.classList.add('is-active');
+
+      // console.log(clickedItem);
+      // console.log(clickedItem.dataset.product);
+
+      if (clickedItem.dataset.product === `prod${i + 1}`) {
+        // console.log(`clickedItem.dataset.product === prod${i+1}`)
+        // console.log(i);
+        // console.log(clickedItem);
+
+        removeClassesByPrefix(productForm, 'slide-');
+
+        productForm.classList.add('slide-' + Number(i + 1));
+
+        // var activeSlide = document.getElementById('slideItem' + Number(i + 1));
+
+        // console.log(activeSlide);
+
+        tabNavigationItems[i].classList.add('is-active');
+
+      }
+
+      if (i === activeIndex) {
+        clickedItem.classList.add('is-active');
+      }
+    }
+  }
+
+  removeClassesByPrefix(productForm, 'slide-');
   goToSlide(clickedIndex);
 }
 
 var paginationItem = function () {
-  console.log('paginationItem()');
+  // console.log('paginationItem()');
 
   var length = slideItem.length;
   var activeIndex = getActiveElement().index;
-  var paginationItemContainer = document.getElementById('slideNavigation');
+  var paginationItemContainer = slideNav;
   
   for (var i = 0; i < length; i++) { 
     var el = document.createElement('span');
     
-    el.classList.add('slide-navigation__item');
+    el.classList.add('slide-navigation__item', 'js-slide-nav');
+    el.dataset.product = `prod${i + 1}`;
 
     if (i === activeIndex) {
       el.classList.add('is-active');
@@ -87,12 +132,15 @@ var paginationItem = function () {
 
     var addedPaginationItem = paginationItemContainer.appendChild(el);
     
+    // add eventListener to dynamically created Nodes
     addedPaginationItem.addEventListener('click', paginationItemClick);
   }
 }
 
+paginationItem();
+
 var getFutureItem = function (active, prev) {
-  console.log('getFutureItem()');
+  // console.log('getFutureItem()');
 
   var index = active + (prev ? -1 : 1);
 
@@ -111,7 +159,7 @@ var getFutureItem = function (active, prev) {
 }
 
 var goToSlide = function (index) {
-  console.log('goToSlide()');
+  // console.log('goToSlide()');
 
   var active = getActiveElement();
   var activeElement = active.element;
@@ -122,13 +170,13 @@ var goToSlide = function (index) {
   var futureItem = slideItem[index];
 
   futureItem.classList.add('is-active');
-  document.querySelector('.slide-navigation__item.is-active').classList.remove('is-active'); //- To add index Nº class to parent
+  document.querySelector('.js-slide-nav.is-active').classList.remove('is-active'); //- To add index Nº class to parent
   
   // console.log(index);
-  slider.classList.add('slide-' + Number(index + 1)); //- add index to class
+  productForm.classList.add('slide-' + Number(index + 1)); //- add index to slider wrapper
 
   // Storage paginationItem and assign active class
-  var paginationItem = document.querySelectorAll('.slide-navigation__item');
+  var paginationItem = document.querySelectorAll('.js-slide-nav');
 
   paginationItem[index].classList.add('is-active');
 
@@ -152,12 +200,12 @@ var arrowButton = function (prev) {
   var activeIndex = active.index;
   var futureItem = getFutureItem(activeIndex, prev);
 
-  removeClassesByPrefix(slider, 'slide-');
+  removeClassesByPrefix(productForm, 'slide-');
   goToSlide(futureItem.index);
 };
 
 function removeClassesByPrefix(el, prefix) {
-  console.log('removeClassesByPrefix()');
+  // console.log('removeClassesByPrefix()');
 
   for (var i = el.classList.length - 1; i >= 0; i--) {
     if (el.classList[i].startsWith(prefix)) {
@@ -174,9 +222,7 @@ buttonPrev.addEventListener('click', function () {
   arrowButton(true);
 });
 
-paginationItem();
-
-// slider.addEventListener('change', function() {
+// productForm.addEventListener('change', function() {
 //   paginationItem();
 // });
 
