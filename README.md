@@ -48,7 +48,8 @@ There are no written tests on this project.
 1. 'energy-renew.jpg' was provided with a background color. 
 If adding the gradient to a higher layer of the image it may cause overlaping of these elements when resizing. 
 This is not a risk I want to take;
-*Solution:* To serve a PNG file with transparency otherwise the use of a radial-gradient won't visually work.
+
+*Solution:* Replace image with a PNG file with transparency otherwise the use of a radial-gradient won't visually work.
 Image was optimised and weights less than the provided one.
 
 2. Missing icons:
@@ -57,7 +58,7 @@ Image was optimised and weights less than the provided one.
 2.3. Tick icon of '100 Pure' section list
 2.4. Chevron for slide
 
-3. All SVG icons were included into a SVG sprite - it is light, easier to control via CSS and by binding them all in one file only, will only execute 1 http request;
+3. All SVG icons were included into a SVG sprite - it is light, easier to control via CSS and by binding them all on one file, will only execute 1 http request;
 
 
 ### Expected Behaviour:
@@ -70,34 +71,37 @@ Image was optimised and weights less than the provided one.
 ### Issues
 
 ### Not delivered
-Couldn't understand what 'Daily Discount' percentage was about.
+'Daily Discount' percentage base is not clear. From the UX perspective, users may have trouble understanding it.
 
-### Provided UI Defects for QA
+### Provided UI - Defects for QA
 1. Heading Mobile content is different than Heading Desktop - used Heading Desktop and adapted font size to fit;
 
 2. 'Online-Only' font-family is different between desktop and mobile (Myriad Pro on Desktop) - applied mobile version font-family (Quicksand)
 
-3. On the PSB, distances between elements (mainly vertical margins) doen't follow a mathematical logic.
+3. On the PSB file, distances between elements (mainly vertical margins) doen't follow a mathematical logic.
 It was sligtly aligned on the CSS side.
 
 ### Notes:
-1. Should use @import from google fonts but is creates FAUX while working. Fonts are locally loaded.
+1. Should use @import from google fonts but is creates FAUX while working. Fonts are being loaded locally.
 ```
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
 </style>
 ```
-2. Images from html are not being cloned to dist folder as well as the json file... :( (related to webpack configuration)
+2. Images from html are not being cloned to dist folder as well as the json file... :( (related to webpack misconfiguration)
 
-3. Instead of inserting all slide dynamic data via innerHTML, it should be added on exact node element.
+3. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS, for bigger screens.
 
-4. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS for bigger screens.
-
-5. *Nice to have:* When selecting the desired product on destop, the existent image could be replaced by the choosen option.
+#### Consider future iteration:
+1.  Instead of inserting all dynamic data once via 'innerHTML', should include each value separately into its Node.
 
 ### Time spent:
-Around 4 1/2 days in between:
-Setup and refine webpack, node and npm configurations; 
-Define basic variables to meet requirements; 
-HTML markup & CSS - 75% done for the CSS work;
-Cleanup files and review code.
+Around 4 1/2 days including:
+1. Setup and refine webpack, node and npm configurations; 
+2. Define basic CSS variables to meet layout requirements; 
+3. Javascript functionality;
+4. Testing;
+5. Cleanup files and review code.
+
+### Future iteration:
+1. Improve slide arrows functionality selection between Mobile and Desktop.
