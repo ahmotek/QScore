@@ -1,0 +1,18 @@
+.product-image {
+  @include respond-to("small") {
+    margin-top: -2 * $vertical-space;
+    margin-bottom: -1.5 * $vertical-space;
+  }
+
+  @include respond-to("medium-large") {
+    display: none;
+  }
+}
+
+.badge {
+  margin: 0 auto;
+
+  @include respond-to("small") {
+    max-width: 146px;
+  }
+}

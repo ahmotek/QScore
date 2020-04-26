@@ -21,59 +21,7 @@
   align-items: center;
 
   //- Section Elements
-  &__title {
-    width: 100%;
-    text-align: center;
-
-    @include respond-to("medium-large") {
-      height: 6.6rem;
-      padding-top: $vertical-space;
-      font-size: map-get($general-font-size--map, main);
-      color: $white;
-    }
-
-    .section--primary & {
-      @include respond-to("small") {
-        padding-bottom: 1.5rem; // instead of $vertical-space based number for px-perfect
-        font-weight: map-get($text-font-weight, bold);
-        text-transform: uppercase;
-        color: $section-header-color;
-      }
-
-      @include respond-to("medium-large") {
-        background-color: $section-header-bg;
-        border-radius: $section-radius $section-radius 0 0;
-      }
-    }
-
-    .section--secondary &,
-    .section--tertiary & {
-      @include respond-to("medium-large") {
-        background-color: mix($white, $section-header-bg, 15%);
-      }
-    }
-
-    .section--secondary & {
-      // font-family: $quicksandBold;
-      font-weight: map-get($text-font-weight, bold);
-
-      @include respond-to("small") {
-        color: $light-sky-blue;
-        margin-bottom: $vertical-space * 2;
-      }
-
-      @include respond-to("medium-large") {
-        border-radius: $section-radius 0 0 0;
-      }
-    }
-
-    .section--tertiary & {
-      @include respond-to("medium-large") {
-        border-radius: 0 $section-radius 0 0;
-      }
-    }
-  }
-
+  &__header,
   &__body,
   &__footer {
     text-align: center;
@@ -83,10 +31,6 @@
     }
 
     .section--primary & {
-      // @include respond-to('small') {
-      //   max-width: var(--card-max-width);
-      // }
-
       @include respond-to("medium") {
         padding-left: 2rem;
         padding-right: 2rem;
@@ -112,8 +56,61 @@
     }
   }
 
+  &__title {
+    width: 100%;
+    text-align: center;
+
+    @include respond-to("medium-large") {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 6.6rem;
+      font-size: map-get($general-font-size--map, main);
+      color: $white;
+    }
+
+    .section--primary & {
+      @include respond-to("small") {
+        padding-bottom: 1.5rem; //- instead of $vertical-space based number for px-perfect
+        font-weight: map-get($text-font-weight, bold);
+        text-transform: uppercase;
+        color: $section-header-color;
+      }
+
+      @include respond-to("medium-large") {
+        background-color: $section-header-bg;
+        border-radius: $section-radius $section-radius 0 0;
+      }
+    }
+
+    .section--secondary &,
+    .section--tertiary & {
+      @include respond-to("medium-large") {
+        background-color: mix($white, $section-header-bg, 15%);
+      }
+    }
+
+    .section--secondary & {
+      font-weight: map-get($text-font-weight, bold);
+
+      @include respond-to("small") {
+        color: $light-sky-blue;
+        margin-bottom: $vertical-space * 2;
+      }
+
+      @include respond-to("medium-large") {
+        border-radius: $section-radius 0 0 0;
+      }
+    }
+
+    .section--tertiary & {
+      @include respond-to("medium-large") {
+        border-radius: 0 $section-radius 0 0;
+      }
+    }
+  }
+
   &__body {
-    //- on click translateX(calc(-200% - 80px))
     @include respond-to("medium-large") {
       padding-top: $vertical-space;
     }
@@ -156,13 +153,6 @@
       @include respond-to("small") {
         max-width: var(--card-max-width);
       }
-    }
-
-    .section--primary & {
-      // @include respond-to("medium-large") { // appiled to form
-      //   background-color: $white;
-      //   border-radius: 0 0 $section-radius $section-radius;
-      // }
     }
 
     .section--secondary &,
@@ -254,17 +244,17 @@
 
     &::before {
       left: 0;
-      background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1) -100%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+      background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1) -100%, rgba(0, 0, 0, 0) 100%);
       background: -webkit-linear-gradient(
         left,
         rgba(0, 0, 0, 0.1) -100%,
         rgba(0, 0, 0, 0) 100%
-      ); /* Chrome10-25,Safari5.1-6 */
+      );
       background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.1) -100%,
         rgba(0, 0, 0, 0) 100%
-      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      );
     }
   }
 }

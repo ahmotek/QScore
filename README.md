@@ -1,4 +1,4 @@
-# Landing Page
+# Landing Page for Quality Score
 Assignment by Laura Garcia
 
 ## Specifications:
@@ -39,14 +39,17 @@ npm run build
 
 ### Run tests:
 ```
-TBD
+There are no written tests on this project.
 ```
 
 ## Remarks:
 
 ### Provided & Created Assets
-1. 'energy-renew.jpg' was provided with a background color that does not match the PSB background file;
-Solution: To serve a PNG file with transparency otherwise the use of a radial-gradient won't visually work.
+1. 'energy-renew.jpg' was provided with a background color. 
+If adding the gradient to a higher layer of the image it may cause overlaping of these elements when resizing. 
+This is not a risk I want to take;
+*Solution:* To serve a PNG file with transparency otherwise the use of a radial-gradient won't visually work.
+Image was optimised and weights less than the provided one.
 
 2. Missing icons:
 2.1. Shipping
@@ -54,11 +57,7 @@ Solution: To serve a PNG file with transparency otherwise the use of a radial-gr
 2.3. Tick icon of '100 Pure' section list
 2.4. Chevron for slide
 
-Note #1: some of the missing icons may be acquired with font awesome (eg: chevron) but since there are already svg icons on the project, it is preferable to avoid loading another font.
-
-Note #2: 
-
-3. All SVG icons should be organized in a SVG sprite - it is light, easier to control via CSS and by binding them all in one file only,  will reduce http requests;
+3. All SVG icons were included into a SVG sprite - it is light, easier to control via CSS and by binding them all in one file only, will only execute 1 http request;
 
 
 ### Expected Behaviour:
@@ -66,34 +65,39 @@ Note #2:
 2. Maintainable and Reusable components;
 3. Performance;
 4. Pixel perfect;
+5. Functionality;
 
 ### Issues
 
 ### Not delivered
+Couldn't understand what 'Daily Discount' percentage was about.
 
-### UI Defects
-1. Heading Mobile content is different than Heading Desktop - used Heading Desktop and adapted to fit;
+### Provided UI Defects for QA
+1. Heading Mobile content is different than Heading Desktop - used Heading Desktop and adapted font size to fit;
 
 2. 'Online-Only' font-family is different between desktop and mobile (Myriad Pro on Desktop) - applied mobile version font-family (Quicksand)
 
-3. PSB styles are not pixel perfect but all 'unlogic' distances were sligtly aligned.
-
-4. Nice to have would be showing image of product on desktop by replacing existent one.
-
+3. On the PSB, distances between elements (mainly vertical margins) doen't follow a mathematical logic.
+It was sligtly aligned on the CSS side.
 
 ### Notes:
-1. Should use @import from google fonts and refactor CSS font-family value but google didn't API respond. Will check it later.
+1. Should use @import from google fonts but is creates FAUX while working. Fonts are locally loaded.
 ```
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;700;900&display=swap');
 </style>
 ```
-2. Images from html are not being cloned to dist folder... :(
+2. Images from html are not being cloned to dist folder as well as the json file... :( (related to webpack configuration)
 
-3. When on desktop select 6 Jars option and the resize, 6 Jars should be selected.
+3. Instead of inserting all slide dynamic data via innerHTML, it should be added on exact node element.
 
-4. instead of innerHTML all slideItems could have injected each value of product.
+4. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS for bigger screens.
+
+5. *Nice to have:* When selecting the desired product on destop, the existent image could be replaced by the choosen option.
 
 ### Time spent:
-21 April - 2h for clone project base, refine webpack config and define basic variables to meet requirements;
-22 April - html markup & styling - 75% done for the CSS work;
+Around 4 1/2 days in between:
+Setup and refine webpack, node and npm configurations; 
+Define basic variables to meet requirements; 
+HTML markup & CSS - 75% done for the CSS work;
+Cleanup files and review code.

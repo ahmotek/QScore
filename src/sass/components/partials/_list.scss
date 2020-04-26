@@ -6,7 +6,6 @@ ul.list {
   }
 
   &--header-section {
-    // font-family: $quicksandBold;
     font-weight: map-get($text-font-weight, bold);
     font-size: map-get($general-font-size--map, header-list);
     line-height: 2.4rem;

@@ -1,36 +1,19 @@
 @charset 'UTF-8';
 
 //- Configuration and helpers - tools and helpers 
-@import 'abstracts/variables',
-        'abstracts/functions',
-        'abstracts/mixins',
-        'abstracts/placeholders';  
+@import 'abstracts/abstracts'; 
 
 //- Vendors - eg: normalize
-@import 'vendors/normalize';
+@import 'vendors/vendors';
 
 //- Base - project standard styles for commonly used HTML elements
-@import 'base/reset',
-        'base/base',
-        'base/fonts',
-        'base/typography',  
-        'base/helpers',
-        'base/generic-layout'; 
+@import 'base/base'; 
 
 //- Layout areas
-@import 'layout/header',
-        'layout/footer',
-        'layout/forms',
-        'layout/main-container';
+@import 'layout/layout';
 
 //- Components
-@import 'components/buttons',
-        'components/form-elements',
-        'components/list',
-        'components/icons',
-        'components/product-navigation',
-        'components/price-display',
-        'components/slider'; 
+@import 'components/components'; 
 
 //- Specific Pages
 @import 'pages/landing-GundryMD'; 

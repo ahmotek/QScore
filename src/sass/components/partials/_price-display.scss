@@ -9,14 +9,6 @@
   @include respond-to("medium-large") {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    // margin-right: auto;
-    // margin-left: auto;
-  }
-
-  @include respond-to("large") {
-    // max-width: calc(100% - 6rem);
-    // padding-right: 3rem;
-    // padding-left: 3rem;
   }
 
   &__item {

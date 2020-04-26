@@ -1,8 +1,7 @@
-// import paginationItem from './slider.js';
-console.log('## 1. Load Products from json');
+// # This partial loads the products data from the json file
 
 function loadProducts() {
-  console.log('load products function');
+  // console.log('load products function');
 
   let imagePath = 'src/assets/images';
 
@@ -29,8 +28,8 @@ function loadProducts() {
       const products = JSON.parse(this.responseText);
 
       // Check products & products.length
-      console.log(products);
-      console.log(products.length); // 3
+      // console.log(products);
+      // console.log(products.length); // 3
 
       // output products array within a loop
       let slideItemOutput = '';
@@ -41,17 +40,18 @@ function loadProducts() {
 
         // Calculate Savings
         var calculateSavings = function (productRegularPrice, productNewPrice) {
-          console.log(productRegularPrice);
-          console.log(productNewPrice);
+          // console.log(productRegularPrice);
+          // console.log(productNewPrice);
 
           let savingsVal = productRegularPrice - productNewPrice;
 
           return savingsVal;
         }
 
-        calculateSavings(product.regularPrice, product.newPrice);
+        // Testing calculateSavings()
+        // calculateSavings(product.regularPrice, product.newPrice);
 
-        console.log(calculateSavings(product.regularPrice, product.newPrice));
+        // console.log(calculateSavings(product.regularPrice, product.newPrice));
 
         // TODO: Split number of newPrice
         // https://stackoverflow.com/questions/9098776/how-to-split-a-decimal-by-its-dot-into-integers-using-javascript
@@ -71,17 +71,14 @@ function loadProducts() {
           return newPriceNode;
         }
 
+        // Testing splitNewPrice()
         // splitNewPrice(product.newPrice);
 
         // console.log(splitNewPrice(product.newPrice));
 
         slideItemOutput += `
           <div id="slideItem${product.id}" class="slide-item">
-            <ul id="TabNav${product.id}" class="tab-nav js-nav">
-              <li class="tab-nav__item js-nav-item is-active" data-product="prod${products[0].id}">${products[0].name}</li>
-              <li class="tab-nav__item js-nav-item" data-product="prod${products[1].id}">${products[1].name}</li>
-              <li class="tab-nav__item js-nav-item" data-product="prod${products[2].id}">${products[2].name}</li>
-            </ul>
+            <h3 class="product-title">${product.name}</h3>
             <img src="${imagePath}/${product.imageName}" class="product-image" alt="Energy renew dietary supplement ${product.quantity} pot">
             <div class="display">
               <div class="display__item">
@@ -112,7 +109,7 @@ function loadProducts() {
           </div>
         `;
 
-        console.log(slideItemOutput);
+        // console.log(slideItemOutput);
       });
 
       document.getElementById('slideContainer').innerHTML = slideItemOutput;
@@ -128,4 +125,3 @@ function loadProducts() {
 }
 
 loadProducts();
-// document.addEventListener('DOMContentLoaded', loadProducts);

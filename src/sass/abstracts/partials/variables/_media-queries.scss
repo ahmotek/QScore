@@ -3,10 +3,13 @@
 //- Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
 $breakpoints: (
   'small': '(max-width: 768px)',
-  'small-medium': '(max-width: #{$max-width})',
-  'medium': '(min-width: 769px) and (max-width: #{$max-width})',
-  'large': '(min-width: #{$max-width})',
+  'small-medium': '(max-width: #{$mid-width})',
+  'medium': '(min-width: 769px) and (max-width: #{$mid-width})',
+  'medium-l': '(min-width: 769px) and (max-width: #{$max-width})',
+  'large': '(min-width: #{$mid-width})',
+  'large-l': '(min-width: #{$max-width})',
   'medium-large': '(min-width: 769px)'
 ) !default;

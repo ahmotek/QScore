@@ -1,63 +1,71 @@
-console.log('## 4. Tabs UI and Functionality');
+// # This partial controls the tab navigation functionality
 
-const tabNav = document.getElementById('TabNav1');
-const slider = document.getElementById('slideContainer');
+const tabNavigation = document.getElementById('TabNav');
+const productForm = document.getElementById('productForm');
 
-console.log('slideContainer');
+const activeSlideItem = document.querySelector('.js-slide-nav.is-active');
+const activeTabItem = document.querySelector('.js-tab-nav.is-active');
+
+const tabNavigationItems = document.getElementsByClassName('js-tab-nav');
+const slideNavigationItems = document.getElementsByClassName('js-slide-nav');
 
 // Event Listeners
-if(slider) {
-  console.log(slider);
+if(tabNavigation) {
+  // console.log(tabNavigation);
 
-  slider.addEventListener('click', function (e) {
+  tabNavigation.addEventListener('click', function (e) {
     let target = e.target;
-    console.log(target);
-    // Do If checkin the element type
-    selectItem(target);
+    // console.log(target);
+
+    if(target.tagName === 'LI') {
+      tabItemCliked(target);
+    }
   });
 }
 
 // Assign is-active class to clicked item
-function selectItem(selectItem) {
-  console.log('selectItem()');
+function tabItemCliked(clickedItem) {
+  // console.log('tabItemCliked()');
   // console.log(el.classList);
 
-  if (selectItem && selectItem.classList.contains('js-nav-item')) {
-    let menuItems = selectItem.parentElement.children;
-    console.log(menuItems); // HTMLCollection
+  if (tabNavigationItems.length === slideNavigationItems.length) {
+    for (var i = 0; i < tabNavigationItems.length; i++) {
+      // Remove is-active from any tabNavigationItems or slideNavigationItems
 
-    for (var i = 0; i < menuItems.length; i++) {
-      // Remove class from any menuItems
-      if (menuItems[i].classList.contains('is-active')) {
-        console.log(menuItems[i]); // 
+      if (tabNavigationItems[i].classList.contains('is-active')) {
+        // console.log(tabNavigationItems[i]); 
 
-        menuItems[i].classList.remove('is-active');
+        tabNavigationItems[i].classList.remove('is-active');
+        slideNavigationItems[i].classList.remove('is-active');
       }
 
-      selectItem.classList.add('is-active');
+      if(activeSlideItem) {
+        activeSlideItem.classList.remove('is-active');
+      }
+      activeTabItem.classList.remove('is-active');
+      clickedItem.classList.add('is-active');
 
-      console.log(selectItem);
-      console.log(selectItem.dataset.product);
+      // console.log(clickedItem);
+      // console.log(clickedItem.dataset.product);
 
-      if(selectItem.dataset.product === `prod${i + 1}`) {
-        console.log(`selectItem.dataset.product === prod${i+1}`)
-        console.log(i);
-        console.log(selectItem);
+      if (clickedItem.dataset.product === `prod${i + 1}`) {
+        // console.log(`clickedItem.dataset.product === prod${i+1}`)
+        // console.log(i);
+        // console.log(clickedItem);
 
-        removeClassesByPrefix(slider, 'slide-');
+        removeClassesByPrefix(productForm, 'slide-');
 
-        slider.classList.add('slide-' + Number(i + 1));
+        productForm.classList.add('slide-' + Number(i + 1));
 
-        var activeSlide = document.getElementById('slideItem' + Number(i + 1));
+        slideNavigationItems[i].classList.add('is-active');
 
-        console.log(activeSlide);
       }
     }
   }
 }
 
 function removeClassesByPrefix(el, prefix) {
-  console.log('removeClassesByPrefix()');
+  // console.log('removeClassesByPrefix()');
 
   for (var i = el.classList.length - 1; i >= 0; i--) {
     if (el.classList[i].startsWith(prefix)) {
@@ -65,7 +73,3 @@ function removeClassesByPrefix(el, prefix) {
     }
   }
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-  
-// });
