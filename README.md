@@ -94,6 +94,7 @@ It was sligtly aligned on the CSS side.
 
 #### Consider future iteration:
 1.  Instead of inserting all dynamic data once via 'innerHTML', should include each value separately into its Node.
+2. Improve slide arrows functionality selection between Mobile and Desktop.
 
 ### Time spent:
 Around 4 1/2 days including:
@@ -102,6 +103,3 @@ Around 4 1/2 days including:
 3. Javascript functionality;
 4. Testing;
 5. Cleanup files and review code.
-
-### Future iteration:
-1. Improve slide arrows functionality selection between Mobile and Desktop.
