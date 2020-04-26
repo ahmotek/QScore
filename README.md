@@ -11,7 +11,6 @@ On desktop:
 2. 'Instant Savings' is being calculated by difference; 
 3. 'Todays discount' is being calculated in percentage.
 
-
 1 product:
 Regular Price: $74.95
 New price: $49.95
@@ -60,7 +59,6 @@ Image was optimised and weights less than the provided one.
 
 3. All SVG icons were included into a SVG sprite - it is light, easier to control via CSS and by binding them all on one file, will only execute 1 http request;
 
-
 ### Expected Behaviour:
 1. Responsive;
 2. Maintainable and Reusable components;
@@ -73,9 +71,7 @@ Image was optimised and weights less than the provided one.
 
 ### Provided UI - Defects for QA
 1. Heading Mobile content is different than Heading Desktop - used Heading Desktop and adapted font size to fit;
-
 2. 'Online-Only' font-family is different between desktop and mobile (Myriad Pro on Desktop) - applied mobile version font-family (Quicksand)
-
 3. On the PSB file, distances between elements (mainly vertical margins) doen't follow a mathematical logic.
 It was sligtly aligned on the CSS side.
 
@@ -87,8 +83,8 @@ It was sligtly aligned on the CSS side.
 </style>
 ```
 2. Images from html are not being cloned to dist folder as well as the json file... :( (related to webpack misconfiguration)
-
 3. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS, for bigger screens.
+4. Mobile test should have been done more exhaustively.
 
 #### Consider future iteration:
 1. Code Refactor :)
