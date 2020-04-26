@@ -91,8 +91,9 @@ It was sligtly aligned on the CSS side.
 3. Max resolution tested = 1440px. Top-left image will probably require more responsive definitions on CSS, for bigger screens.
 
 #### Consider future iteration:
-1.  Instead of inserting all dynamic data once via 'innerHTML', should include each value separately into its Node.
-2. Improve slide arrows functionality selection between Mobile and Desktop.
+1. Code Refactor :)
+2. Instead of inserting all dynamic data once via 'innerHTML', should include each value separately into its Node.
+3. Improve slide arrows functionality selection between Mobile and Desktop.
 
 #### Time spent:
 Around 4 1/2 days including:
